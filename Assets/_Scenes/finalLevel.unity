@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1594968144}
-  m_IndirectSpecularColor: {r: 0.07068012, g: 0.14038652, b: 0.18709984, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4660,8 +4660,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.6911765, g: 0.4327914, b: 0.198205, a: 1}
-  m_Intensity: 5.32
-  m_Range: 15
+  m_Intensity: 10
+  m_Range: 25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -6240,8 +6240,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.6911765, g: 0.4327914, b: 0.198205, a: 1}
-  m_Intensity: 5.32
-  m_Range: 15
+  m_Intensity: 10
+  m_Range: 25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
