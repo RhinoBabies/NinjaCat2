@@ -17,8 +17,11 @@ namespace Ninjacat.Characters.Control
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 		[SerializeField] float jumpMobility = 10f;
+        [SerializeField] float m_DodgeYSpeed = 3f;
+        [SerializeField] float m_DodgeMult = 2f;
 
-		Rigidbody m_Rigidbody;
+
+        Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
@@ -34,7 +37,8 @@ namespace Ninjacat.Characters.Control
         bool m_IsAttacking;
         bool m_IsBlocking;
 
-		GameObject obj_Interact; // object currently being acted on
+
+        GameObject obj_Interact; // object currently being acted on
 
         // from other file
         private Transform m_Cam;      // A reference to the main camera in the scenes transform
@@ -42,6 +46,7 @@ namespace Ninjacat.Characters.Control
         private Vector3 m_Move;       // the world-relative desired move direction, calculated from the camForward and user input.
         private bool m_Jump;          // jump button press
         private bool m_crouch;        // crouch button state (toggle)
+        private bool m_dodge;
 
         //StringToHash IDs for better Animator state responsiveness
         int forwardHash;
@@ -52,10 +57,12 @@ namespace Ninjacat.Characters.Control
 		int jumpHash;
         int attackingHash;
         int blockingHash;
+        int dodgeHash;
 
         int groundedStateHash;
         int crouchingStateHash;
         int airborneStateHash;
+        int dodgingStateHash;
 
         AnimatorStateInfo stateInfo;
 
@@ -75,7 +82,7 @@ namespace Ninjacat.Characters.Control
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 
-            //Parameter hashes
+            //Animator Controller Parameter hashes
 			forwardHash = Animator.StringToHash ("Forward");
 			turnHash = Animator.StringToHash ("Turn");
 			crouchHash = Animator.StringToHash ("Crouch");
@@ -84,11 +91,13 @@ namespace Ninjacat.Characters.Control
 			jumpLegHash = Animator.StringToHash ("JumpLeg");
             attackingHash = Animator.StringToHash("Attack");
             blockingHash = Animator.StringToHash("Block");
+            dodgeHash = Animator.StringToHash("Dodge");
 
-            //State machine hashes
+            //Animator Controller State hashes
             groundedStateHash = Animator.StringToHash ("Grounded");
             crouchingStateHash = Animator.StringToHash("Crouching");
             airborneStateHash = Animator.StringToHash("Airborne");
+            dodgingStateHash = Animator.StringToHash("Dodging");
 
             // from other file
             // get the transform of the main camera
@@ -140,11 +149,15 @@ namespace Ninjacat.Characters.Control
             if (btns.crouch)
                 m_crouch = !m_crouch;
 
+            if (btns.dodge)
+                m_dodge = true;
+
             Attack(btns);
 
             // pass all to rigidbody movement to be handled and animator to be updated
-            Move(m_Move, m_crouch, m_Jump);
+            Move(m_Move, m_crouch, m_Jump, m_dodge);
             m_Jump = false;
+            m_dodge = false;
 
             // call interact script
             Interact(btns.interact);
@@ -164,7 +177,7 @@ namespace Ninjacat.Characters.Control
         }
 
 
-		public void Move(Vector3 move, bool crouch, bool jump)
+		public void Move(Vector3 move, bool crouch, bool jump, bool dodge)
 		{
 			stateInfo = m_Animator.GetCurrentAnimatorStateInfo (0); //get current state info in the Base Layer
 			// convert the world relative moveInput vector into a local-relative
@@ -174,21 +187,24 @@ namespace Ninjacat.Characters.Control
 				move.Normalize();
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
-			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+
+            //Slows movement when running up/downhill; use if realism is desired
+			//move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
 
-            //slow down movement while blocking
+            //adjust movement speed for certain states
             if (!m_IsBlocking)
                 m_ForwardAmount = move.z;
             else
                 m_ForwardAmount = move.z / 1.5f;
 
-			ApplyExtraTurnRotation();
+            ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
 			if (m_IsGrounded)
 			{
-				HandleGroundedMovement(crouch, jump);
+				HandleGroundedMovement(crouch, jump, dodge);
 			}
 			else
 			{
@@ -252,6 +268,7 @@ namespace Ninjacat.Characters.Control
 			m_Animator.SetBool(groundedHash, m_IsGrounded);
             m_Animator.SetBool(attackingHash, m_IsAttacking);
             m_Animator.SetBool(blockingHash, m_IsBlocking);
+            m_Animator.SetBool(dodgeHash, m_dodge);
 
 			if (!m_IsGrounded)
 			{
@@ -265,10 +282,10 @@ namespace Ninjacat.Characters.Control
 				Mathf.Repeat(
 					stateInfo.normalizedTime + m_RunCycleLegOffset, 1);
 			float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
+
 			if (m_IsGrounded)
 			{
-				//replaced with HashID for JumpLEg: m_Animator.SetFloat("JumpLeg", jumpLeg);
-				m_Animator.SetFloat (jumpLegHash, jumpLeg);
+				m_Animator.SetFloat(jumpLegHash, jumpLeg);
 			}
 
             // the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
@@ -303,17 +320,21 @@ namespace Ninjacat.Characters.Control
 		}
 
 
-		void HandleGroundedMovement(bool crouch, bool jump)
+		void HandleGroundedMovement(bool crouch, bool jump, bool dodge)
 		{
-			// check whether conditions are right to allow a jump:
-			if (jump && (stateInfo.shortNameHash == groundedStateHash || stateInfo.shortNameHash == crouchingStateHash))
-			{
-				// jump!
-				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-				m_IsGrounded = false;
-				m_Animator.applyRootMotion = false;
-				m_GroundCheckDistance = 0.1f;
-			}
+            // check whether conditions are right to allow a jump:
+            if (jump && (stateInfo.shortNameHash == groundedStateHash || stateInfo.shortNameHash == crouchingStateHash))
+            {
+                // jump!
+                m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+                m_IsGrounded = false;
+                m_Animator.applyRootMotion = false;
+                m_GroundCheckDistance = 0.1f;
+            }
+            else if (dodge)
+            {
+                m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x * m_DodgeMult, 0f, m_Rigidbody.velocity.z * m_DodgeMult);
+            }
 		}
 
 		void ApplyExtraTurnRotation()

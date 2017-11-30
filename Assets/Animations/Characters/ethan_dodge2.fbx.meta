@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bc0a04bd4c7b9b54da220d83833e515b
-timeCreated: 1512018618
+guid: a472339a81a9ed047869c313167ea1f4
+timeCreated: 1512027581
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -188,7 +188,7 @@ ModelImporter:
     400178: ethan_idle:Spine1
     400180: ethan_idle:Spine2
     4300000: ethan_idle:EthanBody
-    7400000: ethan_dodge
+    7400000: ethan_dodge2
     9500000: //RootNode
     13700000: ethan_idle:EthanBody
   materials:
@@ -204,10 +204,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'ethan_dodge' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'ethan_idle:QuickRigCharacter_LeftLeg' has translation
-      animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -219,7 +216,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ethan_dodge
+      name: ethan_dodge2
       takeName: ethan_dodge
       firstFrame: 1
       lastFrame: 24
@@ -234,34 +231,34 @@ ModelImporter:
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000000000000000000000000000000000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0.96
-    isReadable: 0
+      additiveReferencePoseFrame: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
-    weldVertices: 0
+    weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -454,23 +451,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: ethan_dodge(Clone)
+    - name: ethan_dodge2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:EthanBody
-      parentName: ethan_dodge(Clone)
+      parentName: ethan_dodge2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:EthanSkeleton
-      parentName: ethan_dodge(Clone)
+      parentName: ethan_dodge2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:QuickRigCharacter_Ctrl_Reference
-      parentName: ethan_dodge(Clone)
+      parentName: ethan_dodge2(Clone)
       position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -675,7 +672,7 @@ ModelImporter:
       rotation: {x: -0.017533535, y: -0.14755948, z: -0.6335754, w: 0.7592767}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:QuickRigCharacter_Guides
-      parentName: ethan_dodge(Clone)
+      parentName: ethan_dodge2(Clone)
       position: {x: -1.1034526, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -795,55 +792,55 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:QuickRigCharacter_Reference
-      parentName: ethan_dodge(Clone)
+      parentName: ethan_dodge2(Clone)
       position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:QuickRigCharacter_Hips
       parentName: ethan_idle:QuickRigCharacter_Reference
-      position: {x: -0.024585476, y: 0.8022216, z: -0.12446322}
+      position: {x: -0.024585476, y: 0.8022211, z: -0.12446322}
       rotation: {x: 0.4921547, y: -0.5077241, z: -0.4921547, w: 0.5077241}
       scale: {x: 1, y: 1, z: 1}
     - name: ethan_idle:QuickRigCharacter_LeftUpLeg
       parentName: ethan_idle:QuickRigCharacter_Hips
       position: {x: 0.0033972862, y: 0.0020565167, z: 0.06539791}
       rotation: {x: 0.03396514, y: 0.07156396, z: -0.9967741, w: -0.012897626}
-      scale: {x: 0.9999999, y: 1.0000002, z: 0.9999999}
+      scale: {x: 0.99999964, y: 0.9999999, z: 0.99999976}
     - name: ethan_idle:QuickRigCharacter_LeftLeg
       parentName: ethan_idle:QuickRigCharacter_LeftUpLeg
-      position: {x: -0.3385351, y: 0.0000003361491, z: -0.00000035899504}
+      position: {x: -0.33853483, y: 0.00000041236183, z: -0.00000035050346}
       rotation: {x: -0.011563598, y: 0.0014220867, z: 0.1221029, w: -0.9924491}
-      scale: {x: 1.0000014, y: 1.0000007, z: 1.000001}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
     - name: ethan_idle:QuickRigCharacter_LeftFoot
       parentName: ethan_idle:QuickRigCharacter_LeftLeg
-      position: {x: -0.37007037, y: 0.00000018160982, z: 0.000000021920743}
-      rotation: {x: -0.015878333, y: -0.018507393, z: -0.4823402, w: -0.8756445}
-      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000001}
+      position: {x: -0.3700702, y: 0.00000024122428, z: -0.00000007190915}
+      rotation: {x: -0.015878359, y: -0.018507363, z: -0.48234022, w: -0.87564456}
+      scale: {x: 1.0000002, y: 1.0000012, z: 1.0000006}
     - name: ethan_idle:QuickRigCharacter_LeftToeBase
       parentName: ethan_idle:QuickRigCharacter_LeftFoot
-      position: {x: -0.108636275, y: -2.7254908e-12, z: 0.000000044294296}
-      rotation: {x: -0.0000000018626451, y: -0, z: -0.00000001565786, w: 1}
-      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000002}
+      position: {x: -0.10863633, y: 0.0000000034675678, z: 0.000000028370643}
+      rotation: {x: -0, y: -0, z: 0.00000001414446, w: 1}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000002}
     - name: ethan_idle:QuickRigCharacter_RightUpLeg
       parentName: ethan_idle:QuickRigCharacter_Hips
       position: {x: 0.0033972862, y: 0.0020565167, z: -0.06539791}
       rotation: {x: -0.071567744, y: 0.03396663, z: -0.012895063, w: 0.99677384}
-      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
     - name: ethan_idle:QuickRigCharacter_RightLeg
       parentName: ethan_idle:QuickRigCharacter_RightUpLeg
-      position: {x: 0.33853516, y: -0.00000026775862, z: 0.00000036548465}
-      rotation: {x: -0.011579651, y: 0.0014255755, z: 0.12210731, w: -0.9924484}
-      scale: {x: 1.0000001, y: 0.9999995, z: 0.9999999}
+      position: {x: 0.3385351, y: -0.00000025829968, z: 0.0000004371696}
+      rotation: {x: -0.011579715, y: 0.001425568, z: 0.12210737, w: -0.9924484}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
     - name: ethan_idle:QuickRigCharacter_RightFoot
       parentName: ethan_idle:QuickRigCharacter_RightLeg
-      position: {x: 0.37007022, y: -0.000000055716985, z: 0.000000076874954}
-      rotation: {x: -0.015868127, y: -0.01851455, z: -0.48234138, w: -0.8756439}
-      scale: {x: 0.99999964, y: 1, z: 0.9999997}
+      position: {x: 0.3700701, y: -0.00000005288867, z: 0.000000025817245}
+      rotation: {x: -0.015868127, y: -0.018514566, z: -0.48234144, w: -0.8756438}
+      scale: {x: 1.0000002, y: 0.9999999, z: 1.0000002}
     - name: ethan_idle:QuickRigCharacter_RightToeBase
       parentName: ethan_idle:QuickRigCharacter_RightFoot
-      position: {x: 0.10863634, y: -0.0000000796114, z: -0.000000014909013}
-      rotation: {x: 0.000025356185, y: 0.00000003352761, z: -0.000000015686963, w: 1}
-      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000007}
+      position: {x: 0.10863633, y: -0.000000071347905, z: -0.000000006871101}
+      rotation: {x: 0.000025303103, y: 0.000000063329935, z: -0.000000105414074, w: 1}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
     - name: ethan_idle:QuickRigCharacter_Spine
       parentName: ethan_idle:QuickRigCharacter_Hips
       position: {x: -0.08726884, y: -0.000000037408828, z: 0}
@@ -856,7 +853,7 @@ ModelImporter:
       scale: {x: 1.0000006, y: 1.0000008, z: 1.0000005}
     - name: ethan_idle:QuickRigCharacter_Spine2
       parentName: ethan_idle:QuickRigCharacter_Spine1
-      position: {x: -0.08700547, y: 0.00000002773254, z: 4.440892e-18}
+      position: {x: -0.08700547, y: 0.00000002334919, z: 4.440892e-18}
       rotation: {x: 0.00000005707725, y: -0.000000062022835, z: -0.020983143, w: 0.9997799}
       scale: {x: 1, y: 0.99999976, z: 1}
     - name: ethan_idle:QuickRigCharacter_LeftShoulder
@@ -866,20 +863,20 @@ ModelImporter:
       scale: {x: 0.9999995, y: 0.99999946, z: 0.9999996}
     - name: ethan_idle:QuickRigCharacter_LeftArm
       parentName: ethan_idle:QuickRigCharacter_LeftShoulder
-      position: {x: -0.0897645, y: -7.48562e-10, z: -9.277611e-10}
-      rotation: {x: 0.7106056, y: 0.02166143, z: 0.016633898, w: 0.70306027}
+      position: {x: -0.0897645, y: -7.485619e-10, z: -9.2776103e-10}
+      rotation: {x: 0.7106056, y: 0.021661341, z: 0.016633958, w: 0.7030603}
       scale: {x: 1, y: 1.0000006, z: 1.0000005}
     - name: ethan_idle:QuickRigCharacter_LeftForeArm
       parentName: ethan_idle:QuickRigCharacter_LeftArm
-      position: {x: -0.25055552, y: -0.00000023787025, z: 0.000000034470762}
-      rotation: {x: -0.00445056, y: -0.022743346, z: -0.029508734, w: 0.9992959}
-      scale: {x: 1.0000008, y: 0.9999998, z: 1.0000001}
+      position: {x: -0.2505554, y: -0.00000015716392, z: 0.000000043609752}
+      rotation: {x: -0.0044504697, y: -0.022742962, z: -0.029508943, w: 0.9992959}
+      scale: {x: 1.0000017, y: 1.0000002, z: 1.0000014}
     - name: ethan_idle:QuickRigCharacter_LeftHand
       parentName: ethan_idle:QuickRigCharacter_LeftForeArm
-      position: {x: -0.14492609, y: 0.00000012547788, z: 0.00000010176316}
-      rotation: {x: 0.00000006720803, y: -0.000000032159736, z: 0.0000000067270673,
+      position: {x: -0.14492612, y: 0.000000069504104, z: -0.00000002516033}
+      rotation: {x: -0.00000003503374, y: 0.000000023341276, z: 0.000000096159475,
         w: 1}
-      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000005}
+      scale: {x: 1, y: 1.0000004, z: 1.0000002}
     - name: ethan_idle:QuickRigCharacter_RightShoulder
       parentName: ethan_idle:QuickRigCharacter_Spine2
       position: {x: -0.113115564, y: -0.019862665, z: -0.059843004}
@@ -888,30 +885,29 @@ ModelImporter:
     - name: ethan_idle:QuickRigCharacter_RightArm
       parentName: ethan_idle:QuickRigCharacter_RightShoulder
       position: {x: 0.08976451, y: 0.000000001497124, z: 0.0000000018555221}
-      rotation: {x: -0.71066797, y: -0.021646619, z: -0.016652117, w: -0.7029973}
-      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+      rotation: {x: -0.7106678, y: -0.021646786, z: -0.016652426, w: -0.7029974}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999999}
     - name: ethan_idle:QuickRigCharacter_RightForeArm
       parentName: ethan_idle:QuickRigCharacter_RightArm
-      position: {x: 0.25055534, y: -0.0000000053954747, z: 0.00000006736099}
-      rotation: {x: -0.0044589927, y: -0.022752171, z: -0.02951798, w: 0.99929535}
-      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+      position: {x: 0.25055552, y: -0.00000007247665, z: 0.00000023392188}
+      rotation: {x: -0.004459082, y: -0.02275263, z: -0.02951806, w: 0.99929535}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
     - name: ethan_idle:QuickRigCharacter_RightHand
       parentName: ethan_idle:QuickRigCharacter_RightForeArm
-      position: {x: 0.14492606, y: -0.00000003755429, z: -0.00000004071236}
-      rotation: {x: -0.000000087595254, y: -0.000000017636921, z: 0.00000008135278,
+      position: {x: 0.1449261, y: -0.000000074050966, z: -0.000000073087385}
+      rotation: {x: 0.00000009355424, y: -0.000000011670633, z: 0.00000006641335,
         w: 1}
-      scale: {x: 0.99999976, y: 0.99999994, z: 1.0000004}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000004}
     - name: ethan_idle:QuickRigCharacter_Neck
       parentName: ethan_idle:QuickRigCharacter_Spine2
-      position: {x: -0.23966387, y: 0.00000002555508, z: 0.0000000047683715}
-      rotation: {x: 0.00000006329009, y: 0.0000000021240965, z: 0.12875587, w: -0.99167633}
-      scale: {x: 0.9999993, y: 0.9999993, z: 0.9999993}
+      position: {x: -0.23966387, y: 0.00000002555508, z: 0.000000007152557}
+      rotation: {x: 0.000000032578114, y: -0.000000026739919, z: 0.12875585, w: -0.9916764}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.99999964}
     - name: ethan_idle:QuickRigCharacter_Head
       parentName: ethan_idle:QuickRigCharacter_Neck
-      position: {x: -0.089060046, y: 0.00000013115479, z: -0.0000000047683715}
-      rotation: {x: -0.000000026739926, y: -0.000000032578107, z: -0.000000029802322,
-        w: -1}
-      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+      position: {x: -0.08906024, y: 0.00000011863062, z: -0.000000007152557}
+      rotation: {x: -0, y: -0, z: -8.71136e-16, w: -1}
+      scale: {x: 1, y: 1.0000002, z: 0.9999999}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
