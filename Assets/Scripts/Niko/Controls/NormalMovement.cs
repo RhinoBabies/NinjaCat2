@@ -181,7 +181,7 @@ namespace Ninjacat.Characters.Control
             if (!m_IsBlocking)
                 m_ForwardAmount = move.z;
             else
-                m_ForwardAmount = move.z / 2f;
+                m_ForwardAmount = move.z / 1.5f;
 
 			ApplyExtraTurnRotation();
 

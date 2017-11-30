@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7709c4c00eaadaf44bc8fdca20475ca0
-timeCreated: 1510863540
+guid: c1f1ead0ca1f99840920a8bab08bbba4
+timeCreated: 1510882293
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -205,14 +205,11 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: <Root Transform>
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'ethan_idle' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'QuickRigCharacter_LeftToeBase' has translation
-      animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -227,7 +224,7 @@ ModelImporter:
       name: ethan_idle
       takeName: ethan_idle
       firstFrame: 1
-      lastFrame: 25
+      lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -243,7 +240,7 @@ ModelImporter:
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
-      mirror: 0
+      mirror: 1
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
@@ -459,28 +456,28 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: idle(Clone)
+    - name: idle_2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: EthanBody
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: EthanGlasses
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: EthanSkeleton
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: QuickRigCharacter_Ctrl_Reference
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -688,7 +685,7 @@ ModelImporter:
       rotation: {x: -0.039245654, y: -0.07685172, z: -0.6251272, w: 0.7757381}
       scale: {x: 1, y: 1, z: 1}
     - name: QuickRigCharacter_Guides
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: -1.1034526, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -808,7 +805,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: QuickRigCharacter_Reference
-      parentName: idle(Clone)
+      parentName: idle_2(Clone)
       position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}

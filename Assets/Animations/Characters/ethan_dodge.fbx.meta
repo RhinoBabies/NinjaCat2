@@ -1,0 +1,935 @@
+fileFormatVersion: 2
+guid: bc0a04bd4c7b9b54da220d83833e515b
+timeCreated: 1512018618
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ethan_idle:EthanBody
+    100004: ethan_idle:EthanSkeleton
+    100006: ethan_idle:Head
+    100008: ethan_idle:Hips
+    100010: ethan_idle:LeftArm
+    100012: ethan_idle:LeftFoot
+    100014: ethan_idle:LeftForeArm
+    100016: ethan_idle:LeftHand
+    100018: ethan_idle:LeftLeg
+    100020: ethan_idle:LeftShoulder
+    100022: ethan_idle:LeftToeBase
+    100024: ethan_idle:LeftUpLeg
+    100026: ethan_idle:Neck
+    100028: ethan_idle:QuickRigCharacter_Ctrl_ChestEndEffector
+    100030: ethan_idle:QuickRigCharacter_Ctrl_ChestOriginEffector
+    100032: ethan_idle:QuickRigCharacter_Ctrl_Head
+    100034: ethan_idle:QuickRigCharacter_Ctrl_HeadEffector
+    100036: ethan_idle:QuickRigCharacter_Ctrl_Hips
+    100038: ethan_idle:QuickRigCharacter_Ctrl_HipsEffector
+    100040: ethan_idle:QuickRigCharacter_Ctrl_LeftAnkleEffector
+    100042: ethan_idle:QuickRigCharacter_Ctrl_LeftArm
+    100044: ethan_idle:QuickRigCharacter_Ctrl_LeftElbowEffector
+    100046: ethan_idle:QuickRigCharacter_Ctrl_LeftFoot
+    100048: ethan_idle:QuickRigCharacter_Ctrl_LeftFootEffector
+    100050: ethan_idle:QuickRigCharacter_Ctrl_LeftForeArm
+    100052: ethan_idle:QuickRigCharacter_Ctrl_LeftHand
+    100054: ethan_idle:QuickRigCharacter_Ctrl_LeftHipEffector
+    100056: ethan_idle:QuickRigCharacter_Ctrl_LeftKneeEffector
+    100058: ethan_idle:QuickRigCharacter_Ctrl_LeftLeg
+    100060: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulder
+    100062: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulderEffector
+    100064: ethan_idle:QuickRigCharacter_Ctrl_LeftToeBase
+    100066: ethan_idle:QuickRigCharacter_Ctrl_LeftUpLeg
+    100068: ethan_idle:QuickRigCharacter_Ctrl_LeftWristEffector
+    100070: ethan_idle:QuickRigCharacter_Ctrl_Neck
+    100072: ethan_idle:QuickRigCharacter_Ctrl_Reference
+    100074: ethan_idle:QuickRigCharacter_Ctrl_RightAnkleEffector
+    100076: ethan_idle:QuickRigCharacter_Ctrl_RightArm
+    100078: ethan_idle:QuickRigCharacter_Ctrl_RightElbowEffector
+    100080: ethan_idle:QuickRigCharacter_Ctrl_RightFoot
+    100082: ethan_idle:QuickRigCharacter_Ctrl_RightFootEffector
+    100084: ethan_idle:QuickRigCharacter_Ctrl_RightForeArm
+    100086: ethan_idle:QuickRigCharacter_Ctrl_RightHand
+    100088: ethan_idle:QuickRigCharacter_Ctrl_RightHipEffector
+    100090: ethan_idle:QuickRigCharacter_Ctrl_RightKneeEffector
+    100092: ethan_idle:QuickRigCharacter_Ctrl_RightLeg
+    100094: ethan_idle:QuickRigCharacter_Ctrl_RightShoulder
+    100096: ethan_idle:QuickRigCharacter_Ctrl_RightShoulderEffector
+    100098: ethan_idle:QuickRigCharacter_Ctrl_RightToeBase
+    100100: ethan_idle:QuickRigCharacter_Ctrl_RightUpLeg
+    100102: ethan_idle:QuickRigCharacter_Ctrl_RightWristEffector
+    100104: ethan_idle:QuickRigCharacter_Ctrl_Spine
+    100106: ethan_idle:QuickRigCharacter_Ctrl_Spine1
+    100108: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+    100110: ethan_idle:QuickRigCharacter_Guides
+    100112: ethan_idle:QuickRigCharacter_Head
+    100114: ethan_idle:QuickRigCharacter_Hips
+    100116: ethan_idle:QuickRigCharacter_LeftArm
+    100118: ethan_idle:QuickRigCharacter_LeftFoot
+    100120: ethan_idle:QuickRigCharacter_LeftForeArm
+    100122: ethan_idle:QuickRigCharacter_LeftHand
+    100124: ethan_idle:QuickRigCharacter_LeftLeg
+    100126: ethan_idle:QuickRigCharacter_LeftShoulder
+    100128: ethan_idle:QuickRigCharacter_LeftToeBase
+    100130: ethan_idle:QuickRigCharacter_LeftUpLeg
+    100132: ethan_idle:QuickRigCharacter_Neck
+    100134: ethan_idle:QuickRigCharacter_Reference
+    100136: ethan_idle:QuickRigCharacter_RightArm
+    100138: ethan_idle:QuickRigCharacter_RightFoot
+    100140: ethan_idle:QuickRigCharacter_RightForeArm
+    100142: ethan_idle:QuickRigCharacter_RightHand
+    100144: ethan_idle:QuickRigCharacter_RightLeg
+    100146: ethan_idle:QuickRigCharacter_RightShoulder
+    100148: ethan_idle:QuickRigCharacter_RightToeBase
+    100150: ethan_idle:QuickRigCharacter_RightUpLeg
+    100152: ethan_idle:QuickRigCharacter_Spine
+    100154: ethan_idle:QuickRigCharacter_Spine1
+    100156: ethan_idle:QuickRigCharacter_Spine2
+    100158: ethan_idle:Reference
+    100160: ethan_idle:RightArm
+    100162: ethan_idle:RightFoot
+    100164: ethan_idle:RightForeArm
+    100166: ethan_idle:RightHand
+    100168: ethan_idle:RightLeg
+    100170: ethan_idle:RightShoulder
+    100172: ethan_idle:RightToeBase
+    100174: ethan_idle:RightUpLeg
+    100176: ethan_idle:Spine
+    100178: ethan_idle:Spine1
+    100180: ethan_idle:Spine2
+    400000: //RootNode
+    400002: ethan_idle:EthanBody
+    400004: ethan_idle:EthanSkeleton
+    400006: ethan_idle:Head
+    400008: ethan_idle:Hips
+    400010: ethan_idle:LeftArm
+    400012: ethan_idle:LeftFoot
+    400014: ethan_idle:LeftForeArm
+    400016: ethan_idle:LeftHand
+    400018: ethan_idle:LeftLeg
+    400020: ethan_idle:LeftShoulder
+    400022: ethan_idle:LeftToeBase
+    400024: ethan_idle:LeftUpLeg
+    400026: ethan_idle:Neck
+    400028: ethan_idle:QuickRigCharacter_Ctrl_ChestEndEffector
+    400030: ethan_idle:QuickRigCharacter_Ctrl_ChestOriginEffector
+    400032: ethan_idle:QuickRigCharacter_Ctrl_Head
+    400034: ethan_idle:QuickRigCharacter_Ctrl_HeadEffector
+    400036: ethan_idle:QuickRigCharacter_Ctrl_Hips
+    400038: ethan_idle:QuickRigCharacter_Ctrl_HipsEffector
+    400040: ethan_idle:QuickRigCharacter_Ctrl_LeftAnkleEffector
+    400042: ethan_idle:QuickRigCharacter_Ctrl_LeftArm
+    400044: ethan_idle:QuickRigCharacter_Ctrl_LeftElbowEffector
+    400046: ethan_idle:QuickRigCharacter_Ctrl_LeftFoot
+    400048: ethan_idle:QuickRigCharacter_Ctrl_LeftFootEffector
+    400050: ethan_idle:QuickRigCharacter_Ctrl_LeftForeArm
+    400052: ethan_idle:QuickRigCharacter_Ctrl_LeftHand
+    400054: ethan_idle:QuickRigCharacter_Ctrl_LeftHipEffector
+    400056: ethan_idle:QuickRigCharacter_Ctrl_LeftKneeEffector
+    400058: ethan_idle:QuickRigCharacter_Ctrl_LeftLeg
+    400060: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulder
+    400062: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulderEffector
+    400064: ethan_idle:QuickRigCharacter_Ctrl_LeftToeBase
+    400066: ethan_idle:QuickRigCharacter_Ctrl_LeftUpLeg
+    400068: ethan_idle:QuickRigCharacter_Ctrl_LeftWristEffector
+    400070: ethan_idle:QuickRigCharacter_Ctrl_Neck
+    400072: ethan_idle:QuickRigCharacter_Ctrl_Reference
+    400074: ethan_idle:QuickRigCharacter_Ctrl_RightAnkleEffector
+    400076: ethan_idle:QuickRigCharacter_Ctrl_RightArm
+    400078: ethan_idle:QuickRigCharacter_Ctrl_RightElbowEffector
+    400080: ethan_idle:QuickRigCharacter_Ctrl_RightFoot
+    400082: ethan_idle:QuickRigCharacter_Ctrl_RightFootEffector
+    400084: ethan_idle:QuickRigCharacter_Ctrl_RightForeArm
+    400086: ethan_idle:QuickRigCharacter_Ctrl_RightHand
+    400088: ethan_idle:QuickRigCharacter_Ctrl_RightHipEffector
+    400090: ethan_idle:QuickRigCharacter_Ctrl_RightKneeEffector
+    400092: ethan_idle:QuickRigCharacter_Ctrl_RightLeg
+    400094: ethan_idle:QuickRigCharacter_Ctrl_RightShoulder
+    400096: ethan_idle:QuickRigCharacter_Ctrl_RightShoulderEffector
+    400098: ethan_idle:QuickRigCharacter_Ctrl_RightToeBase
+    400100: ethan_idle:QuickRigCharacter_Ctrl_RightUpLeg
+    400102: ethan_idle:QuickRigCharacter_Ctrl_RightWristEffector
+    400104: ethan_idle:QuickRigCharacter_Ctrl_Spine
+    400106: ethan_idle:QuickRigCharacter_Ctrl_Spine1
+    400108: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+    400110: ethan_idle:QuickRigCharacter_Guides
+    400112: ethan_idle:QuickRigCharacter_Head
+    400114: ethan_idle:QuickRigCharacter_Hips
+    400116: ethan_idle:QuickRigCharacter_LeftArm
+    400118: ethan_idle:QuickRigCharacter_LeftFoot
+    400120: ethan_idle:QuickRigCharacter_LeftForeArm
+    400122: ethan_idle:QuickRigCharacter_LeftHand
+    400124: ethan_idle:QuickRigCharacter_LeftLeg
+    400126: ethan_idle:QuickRigCharacter_LeftShoulder
+    400128: ethan_idle:QuickRigCharacter_LeftToeBase
+    400130: ethan_idle:QuickRigCharacter_LeftUpLeg
+    400132: ethan_idle:QuickRigCharacter_Neck
+    400134: ethan_idle:QuickRigCharacter_Reference
+    400136: ethan_idle:QuickRigCharacter_RightArm
+    400138: ethan_idle:QuickRigCharacter_RightFoot
+    400140: ethan_idle:QuickRigCharacter_RightForeArm
+    400142: ethan_idle:QuickRigCharacter_RightHand
+    400144: ethan_idle:QuickRigCharacter_RightLeg
+    400146: ethan_idle:QuickRigCharacter_RightShoulder
+    400148: ethan_idle:QuickRigCharacter_RightToeBase
+    400150: ethan_idle:QuickRigCharacter_RightUpLeg
+    400152: ethan_idle:QuickRigCharacter_Spine
+    400154: ethan_idle:QuickRigCharacter_Spine1
+    400156: ethan_idle:QuickRigCharacter_Spine2
+    400158: ethan_idle:Reference
+    400160: ethan_idle:RightArm
+    400162: ethan_idle:RightFoot
+    400164: ethan_idle:RightForeArm
+    400166: ethan_idle:RightHand
+    400168: ethan_idle:RightLeg
+    400170: ethan_idle:RightShoulder
+    400172: ethan_idle:RightToeBase
+    400174: ethan_idle:RightUpLeg
+    400176: ethan_idle:Spine
+    400178: ethan_idle:Spine1
+    400180: ethan_idle:Spine2
+    4300000: ethan_idle:EthanBody
+    7400000: ethan_dodge
+    9500000: //RootNode
+    13700000: ethan_idle:EthanBody
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'ethan_idle:QuickRigCharacter_LeftUpLeg'
+      : position error = 7542.954102 mm\n\t'ethan_idle:QuickRigCharacter_LeftLeg'
+      : position error = 38974.632813 mm\n\t'ethan_idle:QuickRigCharacter_LeftFoot'
+      : position error = 42605.203125 mm\n\t'ethan_idle:QuickRigCharacter_LeftToeBase'
+      : position error = 12507.000977 mm\n\t'ethan_idle:QuickRigCharacter_RightUpLeg'
+      : position error = 7542.954102 mm\n\t'ethan_idle:QuickRigCharacter_RightLeg'
+      : position error = 38974.636719 mm\n\t'ethan_idle:QuickRigCharacter_RightFoot'
+      : position error = 42605.183594 mm\n\t'ethan_idle:QuickRigCharacter_RightToeBase'
+      : position error = 12507.007813 mm\n\t'ethan_idle:QuickRigCharacter_Spine' :
+      position error = 10047.025391 mm\n\t'ethan_idle:QuickRigCharacter_Spine1' :
+      position error = 10016.710938 mm\n\t'ethan_idle:QuickRigCharacter_Spine2' :
+      position error = 10016.704102 mm\n\t'ethan_idle:QuickRigCharacter_LeftShoulder'
+      : position error = 14909.249023 mm\n\t'ethan_idle:QuickRigCharacter_LeftArm'
+      : position error = 10334.343750 mm\n\t'ethan_idle:QuickRigCharacter_LeftForeArm'
+      : position error = 28845.779297 mm\n\t'ethan_idle:QuickRigCharacter_LeftHand'
+      : position error = 16684.949219 mm\n\t'ethan_idle:QuickRigCharacter_RightShoulder'
+      : position error = 14909.248047 mm\n\t'ethan_idle:QuickRigCharacter_RightArm'
+      : position error = 10334.345703 mm\n\t'ethan_idle:QuickRigCharacter_RightForeArm'
+      : position error = 28845.759766 mm\n\t'ethan_idle:QuickRigCharacter_RightHand'
+      : position error = 16684.945313 mm\n\t'ethan_idle:QuickRigCharacter_Neck' :
+      position error = 27591.851563 mm\n\t'ethan_idle:QuickRigCharacter_Head' : position
+      error = 10253.242188 mm\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'ethan_dodge' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'ethan_idle:QuickRigCharacter_LeftLeg' has translation
+      animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_LeftFoot'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_RightLeg'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_RightFoot'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_Spine'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_LeftForeArm'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_RightForeArm'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_Neck'
+      has translation animation that will be discarded.\n\t'ethan_idle:QuickRigCharacter_Head'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: ethan_idle:QuickRigCharacter_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ethan_idle:QuickRigCharacter_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: ethan_dodge(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:EthanBody
+      parentName: ethan_dodge(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:EthanSkeleton
+      parentName: ethan_dodge(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      parentName: ethan_dodge(Clone)
+      position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_ChestEndEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.000000015247808, y: 0.9064716, z: 0.008858898}
+      rotation: {x: 0.33296973, y: -8.2302486e-17, z: 2.62449e-17, w: 0.9429375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_ChestOriginEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.000000005711065, y: 0.6372934, z: -0.094198056}
+      rotation: {x: 0.19895068, y: 3.2629046e-17, z: -1.2087408e-16, w: 0.9800095}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_HeadEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.000000005711065, y: 1.0687722, z: 0.15308598}
+      rotation: {x: 0.19914773, y: 7.752467e-10, z: -1.5754445e-10, w: 0.9799695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Hips
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.000000005711065, y: 0.55544066, z: -0.124463215}
+      rotation: {x: 0.19146103, y: 1.632049e-16, z: -3.2980052e-17, w: 0.9815002}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Hips
+      position: {x: -0.065397836, y: -0.003331604, z: 0.002161293}
+      rotation: {x: -0.67620295, y: 0.053250216, z: -0.1645144, w: 0.7161348}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftLeg
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftUpLeg
+      position: {x: 8.881784e-18, y: -0.3385348, z: 0}
+      rotation: {x: 0.7228266, y: -0.09640494, z: 0.10277249, w: 0.6765099}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftFoot
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftLeg
+      position: {x: 8.881784e-18, y: -0.37006992, z: 1.110223e-18}
+      rotation: {x: -0.24178557, y: 0.0059604035, z: -0.018364629, w: 0.97013766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftToeBase
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftFoot
+      position: {x: -0.000000047683713, y: -0.07764656, z: 0.075979196}
+      rotation: {x: 3.469142e-32, y: -0, z: -1.2246467e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Hips
+      position: {x: 0.065397836, y: -0.003331604, z: 0.002161293}
+      rotation: {x: -0.55961955, y: -0.06914499, z: 0.15494852, w: 0.8111942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightLeg
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightUpLeg
+      position: {x: 0.000000019073486, y: -0.3385348, z: 0.000003311634}
+      rotation: {x: 0.7697581, y: 0.09010935, z: -0.08577337, w: 0.6260956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightFoot
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightLeg
+      position: {x: -0.0000000047683715, y: -0.37006992, z: 0}
+      rotation: {x: -0.44564593, y: -0.0058734887, z: -0.018692402, w: 0.8949949}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightToeBase
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightFoot
+      position: {x: 0.000006365776, y: -0.07764656, z: 0.075979196}
+      rotation: {x: 1.608093e-15, y: -0.000000036555345, z: -0.000000043990642, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Spine
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Hips
+      position: {x: -0, y: 0.08722649, z: -0.0027171134}
+      rotation: {x: 0.0076365084, y: 4.9509754e-17, z: -6.378634e-17, w: 0.99997085}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Spine1
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Spine
+      position: {x: 4.4373424e-33, y: 0.08621238, z: -0.011720983}
+      rotation: {x: 0.06952571, y: 1.0032315e-16, z: -2.3048078e-17, w: 0.9975802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Spine1
+      position: {x: -9.860761e-34, y: 0.08621238, z: -0.011720983}
+      rotation: {x: 0.06952621, y: 7.4837675e-10, z: 0.000000010737909, w: 0.9975802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulder
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+      position: {x: -0.059843, y: 0.11077743, z: -0.03029882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftArm
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulder
+      position: {x: -0.0897645, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.09181894, y: -0.11092311, z: 0.5910409, w: 0.7936851}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftForeArm
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftArm
+      position: {x: -0.2505553, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.00000018224411, y: 0.6879507, z: -0.0000028340937, w: 0.7257574}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftHand
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_LeftForeArm
+      position: {x: -0.14492607, y: -1.4210854e-16, z: 0}
+      rotation: {x: -0.0000005788817, y: -0.00000041007073, z: 0.0000005444122, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Neck
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+      position: {x: -5.4234187e-33, y: 0.23862502, z: -0.022294115}
+      rotation: {x: -0.06941059, y: 0.00000003281164, z: -0.000000042589573, w: 0.99758816}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_Head
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Neck
+      position: {x: 1.08468374e-32, y: 0.087849274, z: 0.014634605}
+      rotation: {x: -0.06944073, y: 9.1083345e-17, z: 1.1961488e-17, w: 0.9975861}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightShoulder
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Spine2
+      position: {x: 0.059843, y: 0.11077743, z: -0.03029882}
+      rotation: {x: 0, y: -0, z: -0.000000029802186, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightArm
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightShoulder
+      position: {x: 0.0897645, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.0750783, y: 0.09618829, z: -0.606245, w: 0.7858614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightForeArm
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightArm
+      position: {x: 0.2505553, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.0000014765162, y: -0.5478912, z: -0.00000082387606, w: 0.8365496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightHand
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_RightForeArm
+      position: {x: 0.14492607, y: -1.4210854e-16, z: 0}
+      rotation: {x: -0.00000046606084, y: -0.00000014913246, z: 0.000000668081, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_HipsEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.000000005711065, y: 0.55154103, z: -0.12371252}
+      rotation: {x: 0.19146103, y: 3.2980052e-17, z: -1.2069202e-16, w: 0.9815002}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftAnkleEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.12584955, y: 0.08912606, z: 0.008649163}
+      rotation: {x: -0.0000000037967904, y: -0.05986191, z: -0.06117558, w: 0.9963303}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftElbowEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.21894476, y: 0.77227575, z: -0.19104564}
+      rotation: {x: -0.1033613, y: 0.27508983, z: 0.61903745, w: 0.72830945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftFootEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.14437804, y: 0.012617154, z: 0.08351524}
+      rotation: {x: -0.00000020863561, y: -0.059861965, z: -0.061175518, w: 0.9963303}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftHipEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.06539791, y: 0.55154103, z: -0.12371252}
+      rotation: {x: -0.52658147, y: 0.08376318, z: -0.15127558, w: 0.83235294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftKneeEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.120786004, y: 0.41624194, z: 0.18162699}
+      rotation: {x: 0.23943411, y: -0.07880423, z: -0.026577672, w: 0.9673442}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftShoulderEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.14960761, y: 0.9064716, z: 0.008858894}
+      rotation: {x: 0.35085258, y: -0.3013923, z: 0.5203807, w: 0.7178225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_LeftWristEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: -0.23086293, y: 0.64983726, z: -0.11442747}
+      rotation: {x: -0.1033613, y: 0.27508923, z: 0.61903805, w: 0.72830915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightAnkleEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.12583923, y: 0.10911957, z: -0.16965896}
+      rotation: {x: -0.0000000033426828, y: 0.06484722, z: 0.06627031, w: 0.9956923}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightElbowEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.21135193, y: 0.76159275, z: -0.18601476}
+      rotation: {x: -0.01753297, y: -0.14755967, z: -0.6335758, w: 0.7592763}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightFootEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.14590417, y: 0.0328088, z: -0.09498688}
+      rotation: {x: -0.0000002084044, y: 0.064847045, z: 0.0662704, w: 0.9956923}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightHipEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.0653979, y: 0.55154103, z: -0.12371252}
+      rotation: {x: -0.3939547, y: -0.097532414, z: 0.13884345, w: 0.90333253}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightKneeEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.124300495, y: 0.33114153, z: 0.12640844}
+      rotation: {x: 0.4445489, y: 0.09341914, z: 0.04902476, w: 0.88951993}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightShoulderEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.14960758, y: 0.9064716, z: 0.008858898}
+      rotation: {x: 0.33246213, y: 0.29256082, z: -0.5396233, w: 0.7160194}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Ctrl_RightWristEffector
+      parentName: ethan_idle:QuickRigCharacter_Ctrl_Reference
+      position: {x: 0.23361485, y: 0.62290657, z: -0.15032029}
+      rotation: {x: -0.017533535, y: -0.14755948, z: -0.6335754, w: 0.7592767}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Guides
+      parentName: ethan_dodge(Clone)
+      position: {x: -1.1034526, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Head
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 1.3861035, z: -0.04276131}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Hips
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 0.79997796, z: -0.008942719}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftArm
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.14960751, y: 1.1704066, z: -0.065400615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftFoot
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.09846757, y: 0.09969845, z: -0.095206514}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftForeArm
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.34792832, y: 1.0184639, z: -0.04642143}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftHand
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.45040518, y: 0.9398462, z: 0.0193154}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftLeg
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.097821385, y: 0.45967785, z: -0.0093801115}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftShoulder
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.059843, y: 1.1704066, z: -0.065400615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftToeBase
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.114134185, y: 0.02205189, z: -0.020860061}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:LeftUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0.065397836, y: 0.7966464, z: -0.0067814253}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Neck
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 1.2982543, z: -0.057395916}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Reference
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: -0.001057219, z: -0.015432515}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightArm
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.14960751, y: 1.1704066, z: -0.065400615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightFoot
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.09846757, y: 0.09969845, z: -0.095206514}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightForeArm
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.34792832, y: 1.0184639, z: -0.04642143}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightHand
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.45040518, y: 0.9398462, z: 0.0193154}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightLeg
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.097821385, y: 0.45967785, z: -0.0093801115}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightShoulder
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.059843, y: 1.1704066, z: -0.065400615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightToeBase
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.114134185, y: 0.02205189, z: -0.020860061}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:RightUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: 0.065397836, y: 0.7966464, z: -0.0067814253}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Spine
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 0.8872044, z: -0.011659832}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Spine1
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 0.9734168, z: -0.023380816}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:Spine2
+      parentName: ethan_idle:QuickRigCharacter_Guides
+      position: {x: -0, y: 1.0596292, z: -0.035101797}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Reference
+      parentName: ethan_dodge(Clone)
+      position: {x: 0.02458548, y: -0.001057219, z: -0.015432515}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_Hips
+      parentName: ethan_idle:QuickRigCharacter_Reference
+      position: {x: -0.024585476, y: 0.8022216, z: -0.12446322}
+      rotation: {x: 0.4921547, y: -0.5077241, z: -0.4921547, w: 0.5077241}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ethan_idle:QuickRigCharacter_LeftUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Hips
+      position: {x: 0.0033972862, y: 0.0020565167, z: 0.06539791}
+      rotation: {x: 0.03396514, y: 0.07156396, z: -0.9967741, w: -0.012897626}
+      scale: {x: 0.9999999, y: 1.0000002, z: 0.9999999}
+    - name: ethan_idle:QuickRigCharacter_LeftLeg
+      parentName: ethan_idle:QuickRigCharacter_LeftUpLeg
+      position: {x: -0.3385351, y: 0.0000003361491, z: -0.00000035899504}
+      rotation: {x: -0.011563598, y: 0.0014220867, z: 0.1221029, w: -0.9924491}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.000001}
+    - name: ethan_idle:QuickRigCharacter_LeftFoot
+      parentName: ethan_idle:QuickRigCharacter_LeftLeg
+      position: {x: -0.37007037, y: 0.00000018160982, z: 0.000000021920743}
+      rotation: {x: -0.015878333, y: -0.018507393, z: -0.4823402, w: -0.8756445}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000001}
+    - name: ethan_idle:QuickRigCharacter_LeftToeBase
+      parentName: ethan_idle:QuickRigCharacter_LeftFoot
+      position: {x: -0.108636275, y: -2.7254908e-12, z: 0.000000044294296}
+      rotation: {x: -0.0000000018626451, y: -0, z: -0.00000001565786, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000002}
+    - name: ethan_idle:QuickRigCharacter_RightUpLeg
+      parentName: ethan_idle:QuickRigCharacter_Hips
+      position: {x: 0.0033972862, y: 0.0020565167, z: -0.06539791}
+      rotation: {x: -0.071567744, y: 0.03396663, z: -0.012895063, w: 0.99677384}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: ethan_idle:QuickRigCharacter_RightLeg
+      parentName: ethan_idle:QuickRigCharacter_RightUpLeg
+      position: {x: 0.33853516, y: -0.00000026775862, z: 0.00000036548465}
+      rotation: {x: -0.011579651, y: 0.0014255755, z: 0.12210731, w: -0.9924484}
+      scale: {x: 1.0000001, y: 0.9999995, z: 0.9999999}
+    - name: ethan_idle:QuickRigCharacter_RightFoot
+      parentName: ethan_idle:QuickRigCharacter_RightLeg
+      position: {x: 0.37007022, y: -0.000000055716985, z: 0.000000076874954}
+      rotation: {x: -0.015868127, y: -0.01851455, z: -0.48234138, w: -0.8756439}
+      scale: {x: 0.99999964, y: 1, z: 0.9999997}
+    - name: ethan_idle:QuickRigCharacter_RightToeBase
+      parentName: ethan_idle:QuickRigCharacter_RightFoot
+      position: {x: 0.10863634, y: -0.0000000796114, z: -0.000000014909013}
+      rotation: {x: 0.000025356185, y: 0.00000003352761, z: -0.000000015686963, w: 1}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000007}
+    - name: ethan_idle:QuickRigCharacter_Spine
+      parentName: ethan_idle:QuickRigCharacter_Hips
+      position: {x: -0.08726884, y: -0.000000037408828, z: 0}
+      rotation: {x: -0.000000029802319, y: 0.000000029802319, z: 0.0519697, w: 0.99864864}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000007}
+    - name: ethan_idle:QuickRigCharacter_Spine1
+      parentName: ethan_idle:QuickRigCharacter_Spine
+      position: {x: -0.087005526, y: -0.000000010924606, z: -4.440892e-18}
+      rotation: {x: -0, y: -0, z: 8.881782e-16, w: 1}
+      scale: {x: 1.0000006, y: 1.0000008, z: 1.0000005}
+    - name: ethan_idle:QuickRigCharacter_Spine2
+      parentName: ethan_idle:QuickRigCharacter_Spine1
+      position: {x: -0.08700547, y: 0.00000002773254, z: 4.440892e-18}
+      rotation: {x: 0.00000005707725, y: -0.000000062022835, z: -0.020983143, w: 0.9997799}
+      scale: {x: 1, y: 0.99999976, z: 1}
+    - name: ethan_idle:QuickRigCharacter_LeftShoulder
+      parentName: ethan_idle:QuickRigCharacter_Spine2
+      position: {x: -0.113115564, y: -0.019862665, z: 0.059843015}
+      rotation: {x: -0.47617683, y: 0.5227386, z: 0.4761769, w: 0.52273846}
+      scale: {x: 0.9999995, y: 0.99999946, z: 0.9999996}
+    - name: ethan_idle:QuickRigCharacter_LeftArm
+      parentName: ethan_idle:QuickRigCharacter_LeftShoulder
+      position: {x: -0.0897645, y: -7.48562e-10, z: -9.277611e-10}
+      rotation: {x: 0.7106056, y: 0.02166143, z: 0.016633898, w: 0.70306027}
+      scale: {x: 1, y: 1.0000006, z: 1.0000005}
+    - name: ethan_idle:QuickRigCharacter_LeftForeArm
+      parentName: ethan_idle:QuickRigCharacter_LeftArm
+      position: {x: -0.25055552, y: -0.00000023787025, z: 0.000000034470762}
+      rotation: {x: -0.00445056, y: -0.022743346, z: -0.029508734, w: 0.9992959}
+      scale: {x: 1.0000008, y: 0.9999998, z: 1.0000001}
+    - name: ethan_idle:QuickRigCharacter_LeftHand
+      parentName: ethan_idle:QuickRigCharacter_LeftForeArm
+      position: {x: -0.14492609, y: 0.00000012547788, z: 0.00000010176316}
+      rotation: {x: 0.00000006720803, y: -0.000000032159736, z: 0.0000000067270673,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000005}
+    - name: ethan_idle:QuickRigCharacter_RightShoulder
+      parentName: ethan_idle:QuickRigCharacter_Spine2
+      position: {x: -0.113115564, y: -0.019862665, z: -0.059843004}
+      rotation: {x: 0.5227385, y: 0.47617692, z: -0.52273864, w: 0.4761769}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
+    - name: ethan_idle:QuickRigCharacter_RightArm
+      parentName: ethan_idle:QuickRigCharacter_RightShoulder
+      position: {x: 0.08976451, y: 0.000000001497124, z: 0.0000000018555221}
+      rotation: {x: -0.71066797, y: -0.021646619, z: -0.016652117, w: -0.7029973}
+      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+    - name: ethan_idle:QuickRigCharacter_RightForeArm
+      parentName: ethan_idle:QuickRigCharacter_RightArm
+      position: {x: 0.25055534, y: -0.0000000053954747, z: 0.00000006736099}
+      rotation: {x: -0.0044589927, y: -0.022752171, z: -0.02951798, w: 0.99929535}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+    - name: ethan_idle:QuickRigCharacter_RightHand
+      parentName: ethan_idle:QuickRigCharacter_RightForeArm
+      position: {x: 0.14492606, y: -0.00000003755429, z: -0.00000004071236}
+      rotation: {x: -0.000000087595254, y: -0.000000017636921, z: 0.00000008135278,
+        w: 1}
+      scale: {x: 0.99999976, y: 0.99999994, z: 1.0000004}
+    - name: ethan_idle:QuickRigCharacter_Neck
+      parentName: ethan_idle:QuickRigCharacter_Spine2
+      position: {x: -0.23966387, y: 0.00000002555508, z: 0.0000000047683715}
+      rotation: {x: 0.00000006329009, y: 0.0000000021240965, z: 0.12875587, w: -0.99167633}
+      scale: {x: 0.9999993, y: 0.9999993, z: 0.9999993}
+    - name: ethan_idle:QuickRigCharacter_Head
+      parentName: ethan_idle:QuickRigCharacter_Neck
+      position: {x: -0.089060046, y: 0.00000013115479, z: -0.0000000047683715}
+      rotation: {x: -0.000000026739926, y: -0.000000032578107, z: -0.000000029802322,
+        w: -1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
