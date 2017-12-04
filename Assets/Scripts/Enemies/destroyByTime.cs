@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class destroyByTime : MonoBehaviour {
 
+    public float lifetime = 5f;
+    public bool DoNotDestroy;
+
 	// Use this for initialization
 	void Start () {
-		Destroy (this.gameObject, 5f);
+        if (!DoNotDestroy)
+        {
+            if (lifetime > 0)
+                Destroy(gameObject, lifetime);
+            else
+                Destroy(gameObject);
+        }
 	}
 }

@@ -9,7 +9,6 @@ public class EnemyHealth : MonoBehaviour {
     public int startingHealth;
     public int currentHealth;
 	public GameObject Ragdoll;
-    private GameObject spawnedRagdoll;
     private Vector3 updatePosition;
 
     private void Awake()
@@ -29,7 +28,11 @@ public class EnemyHealth : MonoBehaviour {
 
         if (currentHealth <= 0)
         {
-            Instantiate(Ragdoll, updatePosition + new Vector3 (0f, .7f), transform.rotation);
+            if(Ragdoll != null)
+                Instantiate(Ragdoll, updatePosition + new Vector3 (0f, .7f), transform.rotation);
+            else
+                Debug.LogWarning(name + " does not have a ragdoll set! Is this desired?");
+
             Debug.Log(gameObject.name + " Death @ " + transform.position);
             Destroy(gameObject);
         }

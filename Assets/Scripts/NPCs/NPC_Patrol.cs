@@ -10,25 +10,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof(ThirdPersonCharacter))]
     public class NPC_Patrol : MonoBehaviour
     {
-        public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
+        public UnityEngine.AI.NavMeshAgent agent { get; private set; } // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
 
-        private float changeReset;
-        public Transform destinationPoint;
-        public Transform startPoint;
-        public Transform wayPoint1;
-        public Transform wayPoint2;
-        public Transform wayPoint3;
+        public Transform[] waypoints; //creates a sizable list of tranforms the designer can utilize
+        private Vector3 destinationPoint;
 
-        private int aimPoint;
-        public Transform target;
-      
-      
-        public int awareness;
-        public int numberOfPoints;
-        public float suspicion;
-        public float aggression;
-        private float suspicionReset;
+        private int currentTargetWaypoint; //keeps track of which way the char is going to
+        private int totalWaypoints; //will be assigned to the number of waypoints the designer selects
 
         private void Start()
         {
@@ -40,116 +29,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             agent.updatePosition = true;
             agent.acceleration = 0;
             agent.speed = 0.5f;
-            aimPoint = 1;
-            suspicionReset = suspicion;
 
-
-
+            //grab # of waypoints set by designer in the editor
+            totalWaypoints = waypoints.Length;
         }
 
 
         private void Update()
         {
-
-            agent.enabled = true;
-
-            agent.SetDestination(destinationPoint.position);
-          
-                    if (Vector3.Distance(target.position, this.transform.position) < awareness)
-                    {
-                        agent.acceleration = 0.0f;
-                        agent.speed = 0.0f;
-                        aggression -= Time.deltaTime;
-                        // obj.SendMessage("handleDialogue", m_Rigidbody.gameObject); // think about adding alar mtype dialoge
-
-                        if (aggression <= 0.0f)
-                        {
-                            agent.acceleration = 7.0f;
-                            agent.speed = 1.0f;
-                            if (target != null)
-                                agent.SetDestination(target.position);
-
-                            if (agent.remainingDistance > agent.stoppingDistance)
-                                character.Move(agent.desiredVelocity, false, false);
-                            else
-                                character.Move(Vector3.zero, false, false);
-                        }
-
-                        suspicion = suspicionReset;
-                        Vector3 direction = target.position - this.transform.position;
-                        direction.y = 0;
-
-                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-
-                    }
-                    else //if(Vector3.Distance(target.position, this.transform.position) > awareness)
-                    {
-
-                        suspicion -= Time.deltaTime;
-
-                        if (suspicion <= 0.0f)
-                        {
-                            agent.acceleration = 0;
-                            agent.speed = 0.5f;
-                        }
-
-                        agent.SetDestination(destinationPoint.position);
-                        if (agent.remainingDistance > agent.stoppingDistance)
-                            character.Move(agent.desiredVelocity, false, false);
-
-
-                        else
-                        {
-                            if (aimPoint == 1)
-                            {
-
-                                destinationPoint.position = startPoint.position;
-                                character.Move(Vector3.zero, false, false);
-                                aimPoint = 2;
-
-                            }
-                            else if (aimPoint == 2)
-                            {
-                                destinationPoint.position = wayPoint1.position;
-                                character.Move(Vector3.zero, false, false);
-
-                                if (numberOfPoints == 2)
-                                {
-                                    aimPoint = 1;
-                                }
-                                else
-                                {
-                                    aimPoint = 3;
-                                }
-                            }
-                            else if (aimPoint == 3)
-                            {
-                                destinationPoint.position = wayPoint2.position;
-                                character.Move(Vector3.zero, false, false);
-
-                                if (numberOfPoints == 3)
-                                {
-                                    aimPoint = 1;
-                                }
-                                else
-                                {
-                                    aimPoint = 4;
-                                }
-                            }
-                            else if (aimPoint == 4)
-                            {
-                                destinationPoint.position = wayPoint3.position;
-                                character.Move(Vector3.zero, false, false);
-
-
-                                aimPoint = 1;
-
-
-                            }
-
-                        }
-                    
-                
+            if (agent != null && agent.enabled)
+            {
+                if (agent.remainingDistance > agent.stoppingDistance) //char is still moving to destination
+                    character.Move(agent.desiredVelocity, false, false);
+                else
+                {
+                    character.Move(Vector3.zero, false, false); //stop moving when char gets there
+                    agent.SetDestination(destinationPoint); //assign next waypoint
+                }
             }
         }
 
