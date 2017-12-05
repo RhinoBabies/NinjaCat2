@@ -14,10 +14,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
 
         public Transform[] waypoints; //creates a sizable list of tranforms the designer can utilize
-        private Vector3 destinationPoint;
 
         private int currentTargetWaypoint; //keeps track of which way the char is going to
         private int totalWaypoints; //will be assigned to the number of waypoints the designer selects
+        private int currentWaypointNumber = 0; //which waypoint the char is currently moving towards
 
         private void Start()
         {
@@ -27,11 +27,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             
             agent.updateRotation = false;
             agent.updatePosition = true;
-            agent.acceleration = 0;
-            agent.speed = 0.5f;
+            //agent.acceleration = 0; //is set in editor
+            //agent.speed = 2f; //is set in the editor
 
-            //grab # of waypoints set by designer in the editor
-            totalWaypoints = waypoints.Length;
+            agent.SetDestination(waypoints[currentWaypointNumber].position);
         }
 
 
@@ -40,18 +39,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (agent != null && agent.enabled)
             {
                 if (agent.remainingDistance > agent.stoppingDistance) //char is still moving to destination
+                {
                     character.Move(agent.desiredVelocity, false, false);
+                }
                 else
                 {
                     character.Move(Vector3.zero, false, false); //stop moving when char gets there
-                    agent.SetDestination(destinationPoint); //assign next waypoint
+                    currentWaypointNumber = (++currentWaypointNumber) % waypoints.Length; //wraps the waypoint number back to the beginning
+                    agent.SetDestination(waypoints[currentWaypointNumber].position); //assign next waypoint to its Vector3
                 }
             }
         }
 
     }
 }
-
-
-
-
