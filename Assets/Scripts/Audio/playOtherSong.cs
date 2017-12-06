@@ -8,6 +8,7 @@ public class playOtherSong : MonoBehaviour {
     private int currentSongIndex = 0;
 
     public AudioClip[] songFile; //assign various song files to "playlist"
+    [Range(0.0f, 1.0f)] //restricts the volumes set in the next array between min & max values
     public float[] songVolume; //used to set individual volumes for corresponding songs
 
 	// Use this for initialization
