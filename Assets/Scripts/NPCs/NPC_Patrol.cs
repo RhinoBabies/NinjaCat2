@@ -15,7 +15,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public Transform[] waypoints; //creates a sizable list of tranforms the designer can utilize
 
-        private int currentTargetWaypoint; //keeps track of which way the char is going to
         private int totalWaypoints; //will be assigned to the number of waypoints the designer selects
         private int currentWaypointNumber = 0; //which waypoint the char is currently moving towards
 
