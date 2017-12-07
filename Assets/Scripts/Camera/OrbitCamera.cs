@@ -25,46 +25,56 @@ namespace Assets.Scripts.Camera
         private Vector3 playerLastLoc;
         private float initialCameraRotation;
         private float angleDiff;
-        private const float MAX_ANGLE = 60.0f;
+        private const float DOWN_ANGLE = 45.0f;
+        private const float UP_ANGLE = 315.0f;
+
+        private Transform target; // target for camera transform
 
         private void Start()
         {
-            // set up appropriate references
+            // Set up appropriate references
             ControlManager.cam = this; // pass reference to self over to Control Manager
             player = ControlManager.controls.gameObject; // get reference to player
 
-            // initialize camera location
-            this.transform.position = UGen.getTop(player) - new Vector3(3.0f, 0.0f);
+            // Initialize camera location
+            this.transform.position = UGen.getTop(player) - new Vector3(4.0f, 0.0f);
             this.transform.LookAt(UGen.getTop(player));
 
-            // get initial camera rotation
+            // Get initial camera rotation
             initialCameraRotation = this.transform.rotation.eulerAngles.x;
 
-            // initialize player's last location
+            // Initialize player's last location
             playerLastLoc = UGen.getTop(player);
+
+            // Initialize target transform
+            target = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
+            target.gameObject.SetActive(false);
+            target.position = this.transform.position;
+            target.rotation = this.transform.rotation;
         }
 
         public void controlInterface(ButtonPresses btns)
         {
-            // move camera
-            this.transform.position += UGen.getTop(player) - playerLastLoc;
-            this.transform.RotateAround(UGen.getTop(player), player.transform.up, 10.0f * btns.camHori);
-            this.transform.RotateAround(UGen.getTop(player), this.transform.right, 10.0f * btns.camVert);
+            // Move target
+            target.position += UGen.getTop(player) - playerLastLoc;
+            target.RotateAround(UGen.getTop(player), player.transform.up, 10.0f * btns.camHori * ControlManager.controls.orientX);
+            target.RotateAround(UGen.getTop(player), target.right, -10.0f * btns.camVert * ControlManager.controls.orientY);
 
-            // make sure camera doesn't go too high
-            angleDiff = this.transform.rotation.eulerAngles.x - initialCameraRotation;
+            // Keep target in the sweet spot
+            angleDiff = target.rotation.eulerAngles.x - initialCameraRotation;
 
-            if (angleDiff > 180.0f)
-                angleDiff -= 360.0f;
-            else if (angleDiff < -180.0f)
-                angleDiff += 360.0f;
+            if (angleDiff < UP_ANGLE && angleDiff > DOWN_ANGLE) {
+                if (angleDiff > 180.0f)
+                    target.RotateAround(UGen.getTop(player), target.right, UP_ANGLE - angleDiff);
+                else
+                    target.RotateAround(UGen.getTop(player), target.right, DOWN_ANGLE - angleDiff);
+            }
 
-            if (angleDiff > MAX_ANGLE)
-                this.transform.RotateAround(UGen.getTop(player), this.transform.right, MAX_ANGLE - angleDiff);
-            else if (angleDiff < -MAX_ANGLE)
-                this.transform.RotateAround(UGen.getTop(player), this.transform.right, -angleDiff - MAX_ANGLE);
+            // Move camera toward target
+            this.transform.position = Vector3.Slerp(this.transform.position, target.position,  0.2f);
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, target.rotation, 0.2f);
 
-            // story player's new location
+            // Store player's new location
             playerLastLoc = UGen.getTop(player);
         }
 

@@ -5,9 +5,9 @@ using Assets;
 
 namespace Ninjacat.Characters.Control
 {
-    // ==========================================
-    // * HELPER CLASS FOR PASSING BUTTON PRESSES*
-    // ==========================================
+    // ========================================================================
+    // *               HELPER CLASS FOR PASSING BUTTON PRESSES                *
+    // ========================================================================
 
     /// <summary>
     /// List of button presses since last update.
@@ -80,9 +80,9 @@ namespace Ninjacat.Characters.Control
 
 
 
-    // ==================================
-    // * INTERFACES FOR CONTROL CLASSES *
-    // ==================================
+    // ========================================================================
+    // *                    INTERFACES FOR CONTROL CLASSES                    *
+    // ========================================================================
 
     /// <summary>
     /// Interface for ControlScheme Classes.
@@ -102,9 +102,9 @@ namespace Ninjacat.Characters.Control
 
 
 
-    // =========================
-    // * CONTROL MANAGER CLASS *
-    // =========================
+    // ========================================================================
+    // *                         CONTROL MANAGER CLASS                        *
+    // ========================================================================
 
     [RequireComponent(typeof(ButtonPresses))]
     [RequireComponent(typeof(NormalMovement))]
@@ -112,9 +112,9 @@ namespace Ninjacat.Characters.Control
     [RequireComponent(typeof(QuickMenu))]
 	public class ControlManager : MonoBehaviour
 	{
-        // ==============
-        // * PROPERTIES *
-        // ==============
+        // ====================================================================
+        // *                           PROPERTIES                             *
+        // ====================================================================
 
         public static ControlManager controls;
         public static Assets.Scripts.Camera.OrbitCamera cam; // sets the camera
@@ -125,14 +125,18 @@ namespace Ninjacat.Characters.Control
         private PauseMenu pauseMenu;                    // Pause Menu object
         private QuickMenu quickMenu;                    // Quick Menu object
 
+        // CAMERA SETTINGS
+        public int orientX; // 1 is regular, -1 is inverted x-axis
+        public int orientY; // 1 is regular, -1 is inverted y-axis
 
 
-        // ===================
-        // * PRIVATE METHODS *
-        // ===================
+
+        // ====================================================================
+        // *                        PRIVATE METHODS                           *
+        // ====================================================================
 
         // Initialize Control Values
-		private void Awake()
+        private void Awake()
 		{
             controls = this;
 
@@ -148,6 +152,10 @@ namespace Ninjacat.Characters.Control
 
             // initialize controlScheme to default
             controlScheme = normalMovement;
+
+            // initialize camera control to non-inverted
+            orientX = 1;
+            orientY = 1;
 		}
 
 
@@ -246,8 +254,8 @@ namespace Ninjacat.Characters.Control
                     pauseMenu.initMenu();
                 }
 
-                // Not in any menus, control camera
-                cam.controlInterface(buttons);
+                // Not in any menus, control camera (if controlling camera in UPDATE)
+                //cam.controlInterface(buttons);
             }
 		}
 
@@ -261,6 +269,7 @@ namespace Ninjacat.Characters.Control
                 buttons.setPresses(false);
             }
 
+            cam.controlInterface(buttons); // controlling camera from fixed update is smoother
             controlScheme.controlInterface(buttons);
             buttons.setPresses(false);
         }
