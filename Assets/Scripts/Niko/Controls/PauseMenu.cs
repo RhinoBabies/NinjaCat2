@@ -50,6 +50,16 @@ namespace Ninjacat.Characters.Control {
                 return;
             }
 
+            // If there are no options, don't do anything
+            if (options.Count == 0)
+                return;
+
+            // If select button has been pressed, select an item
+            if (btns.jump) {
+                if (options[selected].action != null)
+                    options[selected].action();
+            }
+
             // Traverse the menu
             movement.setMenuMovement(btns);
             if (movement.moveUp)

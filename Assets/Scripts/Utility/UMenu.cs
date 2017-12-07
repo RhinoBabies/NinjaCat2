@@ -152,7 +152,11 @@ namespace Ninjacat.Utility {
         // ====================================================================
 
         static public void clearOptions(List<MenuOption> options) {
+            foreach (MenuOption option in options) {
+                GameObject.Destroy(option.display);
+            }
 
+            options.Clear();
         }
 
 
