@@ -242,8 +242,8 @@ namespace Ninjacat.Characters.Control
 
                 // If pause button has been pressed, pause the game
                 if (buttons.pause) {
-                    pauseMenu.initMenu();
                     buttons.setPresses(false);
+                    pauseMenu.initMenu();
                 }
 
                 // Not in any menus, control camera
