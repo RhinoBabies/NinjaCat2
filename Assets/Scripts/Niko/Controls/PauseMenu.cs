@@ -59,17 +59,18 @@ namespace Ninjacat.Characters.Control {
                 if (options[selected].action != null)
                     options[selected].action();
             }
+            else {
+                // Traverse the menu
+                movement.setMenuMovement(btns);
+                if (movement.moveUp)
+                    selected = (selected + options.Count - 1) % options.Count;
+                else if (movement.moveDown)
+                    selected = (selected + options.Count + 1) % options.Count;
 
-            // Traverse the menu
-            movement.setMenuMovement(btns);
-            if (movement.moveUp)
-                selected = (selected + options.Count - 1) % options.Count;
-            else if (movement.moveDown)
-                selected = (selected + options.Count + 1) % options.Count;
-
-            // Show which item is selected
-            options[prevSelected].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
-            options[selected].display.canvasRenderer.SetAlpha(1.0f);
+                // Show which item is selected
+                options[prevSelected].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
+                options[selected].display.canvasRenderer.SetAlpha(1.0f);
+            }
         }
 
 
@@ -80,6 +81,10 @@ namespace Ninjacat.Characters.Control {
 
         private const float FIRST_LOC_MAIN = 300.0f;
         private const float ITEM_SPACING_MAIN = 100.0f;
+
+        private void resumeAction() {
+            exitMenu();
+        }
 
         /// <summary>
         /// Builds a menu option for the main menu.
@@ -108,7 +113,7 @@ namespace Ninjacat.Characters.Control {
         /// Build the Main Menu.
         /// </summary>
         private void buildMainMenu() {
-            mainMenu.Add(buildMainMenuOption("Menu/Resume", null));
+            mainMenu.Add(buildMainMenuOption("Menu/Resume", resumeAction));
             mainMenu.Add(buildMainMenuOption("Menu/Save", null));
             mainMenu.Add(buildMainMenuOption("Menu/Load", null));
             mainMenu.Add(buildMainMenuOption("Menu/Options", null));
