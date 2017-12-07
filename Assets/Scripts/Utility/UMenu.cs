@@ -147,5 +147,15 @@ namespace Ninjacat.Utility {
 
 
 
+        // ====================================================================
+        // *                    MENU OPTION LIST FUNCTIONS                    *
+        // ====================================================================
+
+        static public void clearOptions(List<MenuOption> options) {
+
+        }
+
+
+
     } // close UMenu
 } // close namespace
