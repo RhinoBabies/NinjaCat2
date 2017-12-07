@@ -11,9 +11,9 @@ namespace Ninjacat.Utility {
     /// </summary>
     static public class UMenu {
 
-        // =========================
-        // * MENU OPTION STRUCTURE *
-        // =========================
+        // ====================================================================
+        // *                      MENU OPTION STRUCTURE                       *
+        // ====================================================================
 
         /// <summary>
         /// The action to take when the menu option has been selected.
@@ -30,9 +30,9 @@ namespace Ninjacat.Utility {
 
 
 
-        // ==========================
-        // * MOVEMENT THROUGH MENUS *
-        // ==========================
+        // ====================================================================
+        // *                      MOVEMENT THROUGH MENUS                      *
+        // ====================================================================
 
         /// <summary>
         /// Movements through menu.
