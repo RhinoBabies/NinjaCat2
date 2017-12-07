@@ -9,7 +9,7 @@ namespace Ninjacat.Characters.Control {
     public class PauseMenu : MonoBehaviour, IMenuControl
     {
         // ====================================================================
-        // *                          MENU PROPERTIES                         *
+        // *                         MENU PROPERTIES                          *
         // ====================================================================
 
         private const float UNSELECTED_ALPHA = 0.5f;
@@ -76,14 +76,45 @@ namespace Ninjacat.Characters.Control {
 
 
         // ====================================================================
-        // *                              MAIN MENU                           *
+        // *                            MAIN MENU                             *
         // ====================================================================
 
         private const float FIRST_LOC_MAIN = 300.0f;
         private const float ITEM_SPACING_MAIN = 100.0f;
 
+        /// <summary>
+        /// Resume the game.
+        /// </summary>
         private void resumeAction() {
             exitMenu();
+        }
+
+        /// <summary>
+        /// Save the game. Won't be implemented by semester's end.
+        /// </summary>
+        private void saveAction() {
+
+        }
+
+        /// <summary>
+        /// Load the saved game status. Won't be implemented by semester's end.
+        /// </summary>
+        private void loadAction() {
+
+        }
+
+        /// <summary>
+        /// Load the options menu.
+        /// </summary>
+        private void optionsAction() {
+
+        }
+
+        /// <summary>
+        /// Return to the title screen.
+        /// </summary>
+        private void titleScreenAction() {
+
         }
 
         /// <summary>
@@ -114,10 +145,10 @@ namespace Ninjacat.Characters.Control {
         /// </summary>
         private void buildMainMenu() {
             mainMenu.Add(buildMainMenuOption("Menu/Resume", resumeAction));
-            mainMenu.Add(buildMainMenuOption("Menu/Save", null));
-            mainMenu.Add(buildMainMenuOption("Menu/Load", null));
-            mainMenu.Add(buildMainMenuOption("Menu/Options", null));
-            mainMenu.Add(buildMainMenuOption("Menu/TitleScreen", null));
+            mainMenu.Add(buildMainMenuOption("Menu/Save", saveAction));
+            mainMenu.Add(buildMainMenuOption("Menu/Load", loadAction));
+            mainMenu.Add(buildMainMenuOption("Menu/Options", optionsAction));
+            mainMenu.Add(buildMainMenuOption("Menu/TitleScreen", titleScreenAction));
         }
         
 
