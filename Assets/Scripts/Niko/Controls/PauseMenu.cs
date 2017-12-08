@@ -12,12 +12,13 @@ namespace Ninjacat.Characters.Control {
         // *                         MENU PROPERTIES                          *
         // ====================================================================
 
-        private const float UNSELECTED_ALPHA = 0.5f;
+        private const float UNSELECTED_ALPHA = 0.25f;
 
         [SerializeField] private Image img;
         private UMenu.MenuMovement movement;     // movement controls
         private List<UMenu.MenuOption> options;  // the currently-selectable options
         private List<UMenu.MenuOption> mainMenu; // the selectable options of the main menu
+        private List<UMenu.MenuOption> optMenu;  // the selectable options of the options menu
         private int selected;                    // index of the selected option
         
 
@@ -26,10 +27,12 @@ namespace Ninjacat.Characters.Control {
             // Initialize values
             movement = new UMenu.MenuMovement();
             mainMenu = new List<UMenu.MenuOption>();
+            optMenu = new List<UMenu.MenuOption>();
             selected = 0;
 
             // Build menus
             buildMainMenu();
+            buildOptionsMenu();
         }
 
         // ====================================================================
@@ -107,7 +110,7 @@ namespace Ninjacat.Characters.Control {
         /// Load the options menu.
         /// </summary>
         private void optionsAction() {
-
+            enterOptionsMenu();
         }
 
         /// <summary>
@@ -150,11 +153,102 @@ namespace Ninjacat.Characters.Control {
             mainMenu.Add(buildMainMenuOption("Menu/Options", optionsAction));
             mainMenu.Add(buildMainMenuOption("Menu/TitleScreen", titleScreenAction));
         }
-        
+
+        /// <summary>
+        /// Enter the Main Menu.
+        /// </summary>
+        private void enterMainMenu() {
+            // Make previous menu invisible
+            if (options != null) {
+                foreach (UMenu.MenuOption option in options)
+                    option.display.canvasRenderer.SetAlpha(0.0f);
+            }
+
+            // Make main menu active
+            options = mainMenu;
+            selected = 0;
+            options[0].display.canvasRenderer.SetAlpha(1.0f);
+            for (int i = 1; i < options.Count; i++)
+                options[i].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
+        }
+
 
 
         // ====================================================================
-        // *                    TO ENTER AND EXIT PAUSE MENU                  *
+        // *                          OPTIONS MENU                            *
+        // ====================================================================
+
+        private const float FIRST_LOC_OPT = 200.0f;
+        private const float ITEM_SPACING_OPT = 100.0f;
+        private const float CHECKMARK_OFFSET = 200.0f;
+
+        private void backAction() {
+            enterMainMenu();
+        }
+
+        private void invertXAction() {
+
+        }
+
+        private void invertYAction() {
+
+        }
+
+        /// <summary>
+        /// Builds a menu option for the options menu.
+        /// </summary>
+        /// <param name="path">Path to sprite.</param>
+        /// <param name="action">Function to call when selected.</param>
+        private UMenu.MenuOption buildOptionsMenuOption(string path, UMenu.OptionAction action) {
+            UMenu.MenuOption ret = new UMenu.MenuOption();
+
+            // Set the function performed by the option
+            ret.action = action;
+
+            // Set the image properties
+            ret.display = Instantiate(img);
+            ret.display.sprite = Resources.Load<Sprite>(path);
+            ret.display.rectTransform.SetParent(HUD.hud.MenuBG.rectTransform);
+            ret.display.rectTransform.anchoredPosition = new Vector2(0.0f, FIRST_LOC_OPT - optMenu.Count * ITEM_SPACING_OPT);
+            ret.display.SetNativeSize();
+            ret.display.canvasRenderer.SetAlpha(0.0f);
+
+            return ret;
+        }
+
+
+
+        /// <summary>
+        /// Build the Main Menu.
+        /// </summary>
+        private void buildOptionsMenu() {
+            optMenu.Add(buildOptionsMenuOption("Menu/Back", backAction));
+            optMenu.Add(buildOptionsMenuOption("Menu/InvertX", invertXAction));
+            optMenu.Add(buildOptionsMenuOption("Menu/InvertY", invertYAction));
+        }
+
+        /// <summary>
+        /// Enter the Options Menu.
+        /// </summary>
+        private void enterOptionsMenu() {
+            // Make previous menu invisible
+            if (options != null) {
+                foreach (UMenu.MenuOption option in options)
+                    option.display.canvasRenderer.SetAlpha(0.0f);
+            }
+
+            // Make options menu active
+            selected = 0;
+            options = optMenu;
+            options[0].display.canvasRenderer.SetAlpha(1.0f);
+            for (int i = 1; i < options.Count; i++)
+                options[i].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
+        }
+
+
+
+        // ====================================================================
+        // *                   TO ENTER AND EXIT PAUSE MENU                   *
         // ====================================================================
 
         /// <summary>
@@ -164,10 +258,7 @@ namespace Ninjacat.Characters.Control {
             UGen.pause();
             HUD.hud.MenuBG.gameObject.SetActive(true);
             movement.init();
-            options = mainMenu;
-            selected = 0;
-            for (int i = 1; i < options.Count; i++)
-                options[i].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
+            enterMainMenu();
         }
 
         /// <summary>
