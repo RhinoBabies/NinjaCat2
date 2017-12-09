@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -53,18 +54,30 @@ namespace Ninjacat.Utility {
 		private const float NORMAL_SPEED = 1.0f;
 
 		public enum eLayerNum {
+            DEFAULT = 0,
+            TRANSPARENT_FX = 1,
+            IGNORE_RAYCAST = 2,
+            WATER = 4,
+            UI = 5,
 			PLAYER = 8,
 			ENEMY = 9,
 			NPC = 10,
-			TOUCH_OBJECT = 11
+			TOUCH_OBJECT = 11,
+            RESERVED = 31 // DO NOT USE!
 		};
 
 		public enum eLayerMask {
-			PLAYER = 256,       // 2 ^ 8
-			ENEMY = 512,        // 2 ^ 9
-			NPC = 1024,         // 2 ^ 10
-			TOUCH_OBJECT = 2048 // 2 ^ 11
-		};
+            DEFAULT = 1,            // 2 ^ 0
+            TRANSPARENT_FX = 2,     // 2 ^ 1
+            IGNORE_RAYCAST = 4,     // 2 ^ 2
+            WATER = 16,             // 2 ^ 4
+            UI = 32,                // 2 ^ 5
+			PLAYER = 256,           // 2 ^ 8
+			ENEMY = 512,            // 2 ^ 9
+			NPC = 1024,             // 2 ^ 10
+			TOUCH_OBJECT = 2048,    // 2 ^ 11
+            RESERVED = -0x80000000, // 2 ^ 31
+        };
 
 
 
