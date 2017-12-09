@@ -98,6 +98,7 @@ namespace Assets.Scripts.Camera
 
 
         /* THIS LOOKS TERRIBLE AND TAKES A LOT OF PROCESSING TIME
+         * RE-IMPLEMENT IN FUTURE WITH A COLLIDER ATTACHED TO THE FRONT OF THE CAMERA?
         // ====================================================================
         // *                        CLIP BEHAVIOR                             *
         // ====================================================================
