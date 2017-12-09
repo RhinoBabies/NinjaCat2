@@ -33,6 +33,11 @@ namespace Ninjacat.Characters.Control {
             // Build menus
             buildMainMenu();
             buildOptionsMenu();
+
+            // Make menus invisible and set MenuBG active
+            foreach (Image image in HUD.hud.MenuBG.GetComponentsInChildren(typeof(Image)))
+                image.canvasRenderer.SetAlpha(0.0f);
+            HUD.hud.MenuBG.gameObject.SetActive(true);
         }
 
         // ====================================================================
@@ -163,6 +168,8 @@ namespace Ninjacat.Characters.Control {
                 foreach (UMenu.MenuOption option in options)
                     option.display.canvasRenderer.SetAlpha(0.0f);
             }
+            checkX.canvasRenderer.SetAlpha(0.0f);
+            checkY.canvasRenderer.SetAlpha(0.0f);
 
             // Make main menu active
             options = mainMenu;
@@ -180,18 +187,29 @@ namespace Ninjacat.Characters.Control {
 
         private const float FIRST_LOC_OPT = 200.0f;
         private const float ITEM_SPACING_OPT = 100.0f;
-        private const float CHECKMARK_OFFSET = 200.0f;
+        private const float CHECKMARK_OFFSET = 280.0f;
+
+        private Image checkX;
+        private Image checkY;
 
         private void backAction() {
             enterMainMenu();
         }
 
         private void invertXAction() {
-
+            ControlManager.controls.orientX *= -1;
+            if (ControlManager.controls.orientX == 1)
+                checkX.canvasRenderer.SetAlpha(0.0f);
+            else
+                checkX.canvasRenderer.SetAlpha(1.0f);
         }
 
         private void invertYAction() {
-
+            ControlManager.controls.orientY *= -1;
+            if (ControlManager.controls.orientY == 1)
+                checkY.canvasRenderer.SetAlpha(0.0f);
+            else
+                checkY.canvasRenderer.SetAlpha(1.0f);
         }
 
         /// <summary>
@@ -225,6 +243,22 @@ namespace Ninjacat.Characters.Control {
             optMenu.Add(buildOptionsMenuOption("Menu/Back", backAction));
             optMenu.Add(buildOptionsMenuOption("Menu/InvertX", invertXAction));
             optMenu.Add(buildOptionsMenuOption("Menu/InvertY", invertYAction));
+
+            // Checkmark for InvertX option
+            checkX = Instantiate(img);
+            checkX.sprite = Resources.Load<Sprite>("Menu/Checkmark");
+            checkX.rectTransform.SetParent(HUD.hud.MenuBG.rectTransform);
+            checkX.rectTransform.anchoredPosition = optMenu[1].display.rectTransform.anchoredPosition + new Vector2(CHECKMARK_OFFSET, 0.0f);
+            checkX.SetNativeSize();
+            checkX.canvasRenderer.SetAlpha(0.0f);
+
+            // Checkmark for InvertY option
+            checkY = Instantiate(img);
+            checkY.sprite = Resources.Load<Sprite>("Menu/Checkmark");
+            checkY.rectTransform.SetParent(HUD.hud.MenuBG.rectTransform);
+            checkY.rectTransform.anchoredPosition = optMenu[2].display.rectTransform.anchoredPosition + new Vector2(CHECKMARK_OFFSET, 0.0f);
+            checkY.SetNativeSize();
+            checkY.canvasRenderer.SetAlpha(0.0f);
         }
 
         /// <summary>
@@ -243,6 +277,11 @@ namespace Ninjacat.Characters.Control {
             options[0].display.canvasRenderer.SetAlpha(1.0f);
             for (int i = 1; i < options.Count; i++)
                 options[i].display.canvasRenderer.SetAlpha(UNSELECTED_ALPHA);
+
+            if (ControlManager.controls.orientX == -1)
+                checkX.canvasRenderer.SetAlpha(1.0f);
+            if (ControlManager.controls.orientY == -1)
+                checkY.canvasRenderer.SetAlpha(1.0f);
         }
 
 
@@ -256,7 +295,7 @@ namespace Ninjacat.Characters.Control {
         /// </summary>
         public void initMenu() {
             UGen.pause();
-            HUD.hud.MenuBG.gameObject.SetActive(true);
+            HUD.hud.MenuBG.canvasRenderer.SetAlpha(1.0f);
             movement.init();
             enterMainMenu();
         }
@@ -265,7 +304,12 @@ namespace Ninjacat.Characters.Control {
         /// Called to exit menu.
         /// </summary>
         public void exitMenu() {
-            HUD.hud.MenuBG.gameObject.SetActive(false);
+            foreach (UMenu.MenuOption option in options)
+                option.display.canvasRenderer.SetAlpha(0.0f);
+            checkX.canvasRenderer.SetAlpha(0.0f);
+            checkY.canvasRenderer.SetAlpha(0.0f);
+            //HUD.hud.MenuBG.gameObject.SetActive(false);
+            HUD.hud.MenuBG.canvasRenderer.SetAlpha(0.0f);
             UGen.resume();
         }
 
