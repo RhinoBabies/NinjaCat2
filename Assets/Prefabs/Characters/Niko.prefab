@@ -2892,6 +2892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e24edb1e0408479aabee4aab0833870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 114911319733505692, guid: aab0eda18e5ce254798ec82da1464994, type: 2}
 --- !u!114 &114698314670369910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2903,6 +2904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af45e014c01b538458c12d387d5ebdff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orientX: 0
+  orientY: 0
 --- !u!114 &114758764342695234
 MonoBehaviour:
   m_ObjectHideFlags: 1
