@@ -32,3 +32,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Maya incremental saves and workspace files
+/incrementalSave/
+*.mel
+
+# MAC OS Generated Files
+.DS_Store
