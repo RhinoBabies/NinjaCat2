@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Stairstep
   - Enemy
-  - Jump Link
+  - Environment
   layers:
   - Default
   - TransparentFX
