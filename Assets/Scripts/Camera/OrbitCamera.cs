@@ -96,12 +96,36 @@ namespace Assets.Scripts.Camera
             //reduceAlpha();
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Environment"))
+            {
+                Material mat = other.GetComponent<Renderer>().material;
+                UShader.ChangeRenderMode(mat, UShader.BlendMode.Fade);
+                Color col = mat.color; //get current color of material
+                col.a = .25f;
+                mat.color = col;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Environment"))
+            {
+                Color col = other.GetComponent<Renderer>().material.color;
+                col.a = 1.0f;
+                other.GetComponent<Renderer>().material.color = col;
+                UShader.ChangeRenderMode(other.GetComponent<Renderer>().material, UShader.BlendMode.Opaque);
+            }
+        }
+
 
         /* THIS LOOKS TERRIBLE AND TAKES A LOT OF PROCESSING TIME
          * RE-IMPLEMENT IN FUTURE WITH A COLLIDER ATTACHED TO THE FRONT OF THE CAMERA?
         // ====================================================================
         // *                        CLIP BEHAVIOR                             *
         // ====================================================================
+        
 
         private const float ALPHA_REDUCTION = 0.25f;
         private const float ALPHA_RETURN = 1.0f;
@@ -116,12 +140,13 @@ namespace Assets.Scripts.Camera
 
             // Get all objects directly between the camera and the player
             RaycastHit[] hits = Physics.RaycastAll(this.transform.position, direction, distance, LAYER_MASK);
+            Debug.DrawLine(this.transform.position, UGen.getTop(player), Color.blue);
 
             // Return all affected objects to normal opacity
             foreach (GameObject obj in affected) {
-                Color col = obj.GetComponent<Renderer>().material.color;
-                col.a = ALPHA_RETURN;
-                obj.GetComponent<Renderer>().material.color = col;
+                Color col = obj.GetComponent<Renderer>().material.color; //get current color of material
+                col.a = ALPHA_RETURN; //reset color's alpha channel back to max (1.0f)
+                obj.GetComponent<Renderer>().material.color = col; //set current color of material to full alpha
             }
 
             // Clear List
@@ -129,11 +154,12 @@ namespace Assets.Scripts.Camera
 
             // Add all the hits to affected objects list and reduce opacity
             foreach (RaycastHit hit in hits) {
-                hit.collider.GetComponent<Renderer>().material.EnableKeyword("_ALPHABLEND_ON");
-                Color col = hit.collider.GetComponent<Renderer>().material.color;
-                col.a = ALPHA_REDUCTION;
-                hit.collider.GetComponent<Renderer>().material.color = col;
-                affected.Add(hit.collider.gameObject);
+                hit.collider.GetComponent<Renderer>().material.EnableKeyword("_ALPHABLEND_ON"); //set shader to Fade mode
+                Color col = hit.collider.GetComponent<Renderer>().material.color; //get current color of material
+                col.a = ALPHA_REDUCTION; //set alpha of that color to float value
+                hit.collider.GetComponent<Renderer>().material.color = col; //set new alpha to material
+                affected.Add(hit.collider.gameObject); //add gameObject to list of objects that are faded
+                Debug.Log("lowering alpha of " + hit.collider.gameObject.name);
             }
         }
         */
