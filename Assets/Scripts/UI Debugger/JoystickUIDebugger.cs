@@ -12,37 +12,37 @@ public class JoystickUIDebugger : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetAxis ("Horizontal") > 0f) { //if right
+		if (Input.GetAxis ("Horizontal") > 0f || Input.GetButton("RightKey")) { //if right
 			newZRotation = 90f;
 			joystick.SetActive(true);
-		} else if (Input.GetAxis ("Horizontal") < 0f) {	//else if left
+		} else if (Input.GetAxis ("Horizontal") < 0f || Input.GetButton("LeftKey")) {	//else if left
 			newZRotation = -90f;
 			joystick.SetActive(true);
 		} else { //else centered
 			joystick.SetActive(false);
 		}
 
-		if (Input.GetAxis("Vertical") > 0f) // if up
+		if (Input.GetAxis("Vertical") > 0f || Input.GetButton("UpKey")) // if up
 		{
 			joystick.SetActive(true);
 			//if up left
-			if (Input.GetAxis ("Horizontal") < 0f)
+			if (Input.GetAxis ("Horizontal") < 0f || Input.GetButton("LeftKey"))
 				newZRotation = -135f;
 			//else if up right
-			else if (Input.GetAxis ("Horizontal") > 0f)
+			else if (Input.GetAxis ("Horizontal") > 0f || Input.GetButton("RightKey"))
 				newZRotation = 135f;
 			//else just up
 			else
 				newZRotation = 180f;
 		}
-		else if (Input.GetAxis("Vertical") < 0f) //if down
+		else if (Input.GetAxis("Vertical") < 0f || Input.GetButton("DownKey")) //if down
 		{	
 			joystick.SetActive(true);
 			//if down left
-			if (Input.GetAxis ("Horizontal") < 0f)
+			if (Input.GetAxis ("Horizontal") < 0f || Input.GetButton("LeftKey"))
 				newZRotation = 315f;
 			//else if down right
-			else if (Input.GetAxis ("Horizontal") > 0f)
+			else if (Input.GetAxis ("Horizontal") > 0f || Input.GetButton("RightKey"))
 				newZRotation = 45f;
 			//else just down
 			else

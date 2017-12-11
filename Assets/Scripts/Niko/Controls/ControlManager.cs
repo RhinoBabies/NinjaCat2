@@ -163,9 +163,30 @@ namespace Ninjacat.Characters.Control
         // Get Input Information and Deal with Menus
 		private void Update()
 		{
-            // Joysticks
+            // Left Joystick and WASD Keys
             buttons.hori = Input.GetAxis("Horizontal");
+            if (buttons.hori < .5f)
+            {
+                if (Input.GetButton("LeftKey"))
+                    buttons.hori = -1.0f;
+                else if (Input.GetButton("RightKey"))
+                    buttons.hori = 1.0f;
+                else
+                    buttons.hori = 0.0f;
+            }
+
             buttons.vert = Input.GetAxis("Vertical");
+            if (buttons.vert < .5f)
+            {
+                if (Input.GetButton("DownKey"))
+                    buttons.vert = -1.0f;
+                else if (Input.GetButton("UpKey"))
+                    buttons.vert = 1.0f;
+                else
+                    buttons.vert = 0.0f;
+            }
+
+            // Right Joystick
             buttons.camHori = Input.GetAxis("CamHori");
             buttons.camVert = Input.GetAxis("CamVert");
 

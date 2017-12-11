@@ -52,6 +52,8 @@ namespace Ninjacat.Characters.Control {
             // Store index of currently selected option
             int prevSelected = selected;
 
+            Debug.Log("Vert: " + btns.vert);
+
             // If pause button has been pressed, exit the pause menu
             if (btns.pause) {
                 exitMenu();
