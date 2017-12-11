@@ -1,16 +1,11 @@
 ﻿using System;
-
 using System.Collections.Generic;
-
 using System.Linq;
-
 using System.Text;
-
 using UnityEngine;
-
 using Ninjacat.Characters.Control;
-
 using Ninjacat.Utility;
+using Ninjacat.Data;
 
 
 
@@ -73,8 +68,8 @@ namespace Assets.Scripts.Camera
         {
             // Move target
             target.position += UGen.getTop(player) - playerLastLoc;
-            target.RotateAround(UGen.getTop(player), player.transform.up, 10.0f * btns.camHori * ControlManager.controls.orientX);
-            target.RotateAround(UGen.getTop(player), target.right, -10.0f * btns.camVert * ControlManager.controls.orientY);
+            target.RotateAround(UGen.getTop(player), player.transform.up, 10.0f * btns.camHori * GameData.data.orientX);
+            target.RotateAround(UGen.getTop(player), target.right, -10.0f * btns.camVert * GameData.data.orientY);
 
             // Keep target in the sweet spot
             angleDiff = target.rotation.eulerAngles.x - initialCameraRotation;
