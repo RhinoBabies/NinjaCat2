@@ -117,8 +117,9 @@ namespace Ninjacat.Characters.Control
         // ====================================================================
 
         public static ControlManager controls;
-        public static Assets.Scripts.Camera.OrbitCamera cam; // sets the camera
-        private IControlScheme controlScheme;                // current control scheme
+        public Assets.Scripts.Camera.OrbitCamera cam; // sets the camera
+        public GameObject player;                     // the player character object
+        private IControlScheme controlScheme;         // current control scheme
 
         private ButtonPresses buttons;                  // current state of each button press (true/false)
 		private NormalMovement normalMovement;          // A reference to the NormalMovement on the object
@@ -132,13 +133,20 @@ namespace Ninjacat.Characters.Control
 
 
         // ====================================================================
-        // *                        PRIVATE METHODS                           *
+        // *                         STARTUP METHOD                           *
         // ====================================================================
 
         // Initialize Control Values
         private void Awake()
 		{
-            controls = this;
+            // make singleton
+            if (controls == null)
+            {
+                DontDestroyOnLoad(this.gameObject);
+                controls = this;
+            }
+            else if (controls != this)
+                Destroy(this.gameObject);
 
             // get class instances
             buttons = new ButtonPresses();
@@ -160,8 +168,28 @@ namespace Ninjacat.Characters.Control
 
 
 
+        // ====================================================================
+        // *                          GET OBJECTS                             *
+        // ====================================================================
+
+            private void setPlayer(GameObject obj)
+        {
+            player = obj;
+            normalMovement.getPlayer();
+        }
+
+        private void setCamera(Assets.Scripts.Camera.OrbitCamera c)
+        {
+            cam = c;
+            normalMovement.getCamera();
+        }
+
+        // ====================================================================
+        // *                          UPDATE METHOD                           *
+        // ====================================================================
+
         // Get Input Information and Deal with Menus
-		private void Update()
+        private void Update()
 		{
             // Joysticks
             buttons.hori = Input.GetAxis("Horizontal");
@@ -237,25 +265,10 @@ namespace Ninjacat.Characters.Control
                 pauseMenu.controlInterface(buttons);
                 buttons.setPresses(false);
             }
-            else { // If not paused
-                // If in quick menu, run quick menu controls
-                if (quickMenu.isOpen()) {
-                    quickMenu.controlInterface(buttons);
-                    buttons.setPresses(false);
-                }
-                else if (buttons.qMenu) { // If not in quick menu, check the quick menu button
-                    quickMenu.initMenu();
-                    buttons.setPresses(false);
-                }
-
+            else if (buttons.pause) { // If not paused
                 // If pause button has been pressed, pause the game
-                if (buttons.pause) {
                     buttons.setPresses(false);
                     pauseMenu.initMenu();
-                }
-
-                // Not in any menus, control camera (if controlling camera in UPDATE)
-                //cam.controlInterface(buttons);
             }
 		}
 
@@ -263,13 +276,9 @@ namespace Ninjacat.Characters.Control
 
 		// Run regular controls if not paused
 		private void FixedUpdate() {
-            // If not in quick menu, run regular controls
-            if (quickMenu.isOpen()) {
-                buttons.setPersistent(false);
-                buttons.setPresses(false);
-            }
+            if (cam != null)
+                cam.controlInterface(buttons);
 
-            cam.controlInterface(buttons); // controlling camera from fixed update is smoother
             controlScheme.controlInterface(buttons);
             buttons.setPresses(false);
         }

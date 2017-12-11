@@ -40,8 +40,8 @@ namespace Assets.Scripts.Camera
         private void Start()
         {
             // Set up appropriate references
-            ControlManager.cam = this; // pass reference to self over to Control Manager
-            player = ControlManager.controls.gameObject; // get reference to player
+            ControlManager.controls.SendMessage("setCamera", this); // pass reference to self over to Control Manager
+            player = ControlManager.controls.player; // get reference to player
 
             // Initialize camera location
             this.transform.position = UGen.getTop(player) - new Vector3(4.0f, 0.0f);
@@ -71,6 +71,9 @@ namespace Assets.Scripts.Camera
 
         public void controlInterface(ButtonPresses btns)
         {
+            if (player == null)
+                return;
+
             // Move target
             target.position += UGen.getTop(player) - playerLastLoc;
             target.RotateAround(UGen.getTop(player), player.transform.up, 10.0f * btns.camHori * ControlManager.controls.orientX);

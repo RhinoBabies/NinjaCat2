@@ -3,9 +3,9 @@ using Ninjacat.Utility;
 
 namespace Ninjacat.Characters.Control
 {
-	[RequireComponent(typeof(Rigidbody))]
-	[RequireComponent(typeof(CapsuleCollider))]
-	[RequireComponent(typeof(Animator))]
+	//[RequireComponent(typeof(Rigidbody))]
+	//[RequireComponent(typeof(CapsuleCollider))]
+	//[RequireComponent(typeof(Animator))]
 	public class NormalMovement : MonoBehaviour, IControlScheme
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
@@ -21,8 +21,8 @@ namespace Ninjacat.Characters.Control
         [SerializeField] float m_DodgeMult = 2f;
 
 
-        Rigidbody m_Rigidbody;
-		Animator m_Animator;
+        private Rigidbody m_Rigidbody;
+		private Animator m_Animator;
 		bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
@@ -31,7 +31,7 @@ namespace Ninjacat.Characters.Control
 		Vector3 m_GroundNormal;
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
-		CapsuleCollider m_Capsule;
+		private CapsuleCollider m_Capsule;
 		bool m_Crouching;
 		bool m_Interacting;
         bool m_IsAttacking;
@@ -71,15 +71,8 @@ namespace Ninjacat.Characters.Control
 
 		void Start()
 		{
-            audioSrc = GetComponent<AudioSource>();
-			m_Animator = GetComponent<Animator>();
-			m_Rigidbody = GetComponent<Rigidbody>();
-			m_Capsule = GetComponent<CapsuleCollider>();
-			m_CapsuleHeight = m_Capsule.height;
-			m_CapsuleCenter = m_Capsule.center;
             obj_Interact = null;
 
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 
             //Animator Controller Parameter hashes
@@ -114,11 +107,36 @@ namespace Ninjacat.Characters.Control
         }
 
 
+
+        public void getPlayer()
+        {
+            audioSrc = ControlManager.controls.player.GetComponent<AudioSource>();
+            m_Animator = ControlManager.controls.player.GetComponent<Animator>();
+            m_Rigidbody = ControlManager.controls.player.GetComponent<Rigidbody>();
+            m_Capsule = ControlManager.controls.player.GetComponent<CapsuleCollider>();
+            m_CapsuleHeight = m_Capsule.height;
+            m_CapsuleCenter = m_Capsule.center;
+
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
+
+        public void getCamera()
+        {
+            m_Cam = Camera.main.transform;
+        }
+
+
         /// <summary>
         /// Default movement control scheme.
         /// </summary>
         /// <param name="btns">The buttons that have been pressed since last update.</param>
         public void controlInterface(ButtonPresses btns) {
+            // return if there is no reference to player
+            if (ControlManager.controls.player == null) {
+                Debug.Log("No reference to player. Exiting.");
+                return;
+            }
+
             // read inputs
             float h = btns.hori;
             float v = btns.vert;
@@ -179,13 +197,15 @@ namespace Ninjacat.Characters.Control
 
 		public void Move(Vector3 move, bool crouch, bool jump, bool dodge)
 		{
+            if (m_Animator == null)
+                Debug.Log("m_Animator == null");
 			stateInfo = m_Animator.GetCurrentAnimatorStateInfo (0); //get current state info in the Base Layer
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			if (move.magnitude > 1f)
 				move.Normalize();
-			move = transform.InverseTransformDirection(move);
+			move = ControlManager.controls.player.transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 
             //Slows movement when running up/downhill; use if realism is desired
@@ -309,7 +329,7 @@ namespace Ninjacat.Characters.Control
 			m_Rigidbody.AddForce(extraGravityForce);
 
 			//allows movement while airborne, especially when jumping at a wall face to mount
-			vec3_movement = transform.TransformVector(vec3_movement);
+			vec3_movement = ControlManager.controls.player.transform.TransformVector(vec3_movement);
 
 			if (m_Rigidbody.velocity.magnitude < 3f)
 				m_Rigidbody.AddForce(vec3_movement.x * jumpMobility, 0f, vec3_movement.z * jumpMobility);
@@ -331,17 +351,18 @@ namespace Ninjacat.Characters.Control
                 m_Animator.applyRootMotion = false;
                 m_GroundCheckDistance = 0.1f;
             }
-            else if (dodge)
+            /*else if (dodge)
             {
                 m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x * m_DodgeMult, 0f, m_Rigidbody.velocity.z * m_DodgeMult);
             }
+            */
 		}
 
 		void ApplyExtraTurnRotation()
 		{
 			// help the character turn faster (this is in addition to root rotation in the animation)
 			float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
-			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
+			ControlManager.controls.player.transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
 
 
@@ -366,11 +387,11 @@ namespace Ninjacat.Characters.Control
 			RaycastHit hitInfo;
 			#if UNITY_EDITOR
 			// helper to visualise the ground check ray in the scene view
-			Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
+			Debug.DrawLine(ControlManager.controls.player.transform.position + (Vector3.up * 0.1f), ControlManager.controls.player.transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
 			#endif
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
-			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+			if (Physics.Raycast(ControlManager.controls.player.transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
@@ -395,13 +416,13 @@ namespace Ninjacat.Characters.Control
                 GameObject obj;
                 GameObject objDia;
                 GameObject objInt;
-                UGen.PseudoTransform charTrans = UGen.setPseudo(this.gameObject.transform);
+                UGen.PseudoTransform charTrans = UGen.setPseudo(ControlManager.controls.player.transform);
                 float score;
 
                 if (!m_Interacting) {
                     // get an object each of NPC and TOUCH_OBJECT type
-                    objDia = UChar.actOnLayer(this.gameObject, (int)UGen.eLayerMask.NPC, 45.0f, 3.0f);
-                    objInt = UChar.actOnLayer(this.gameObject, (int)UGen.eLayerMask.TOUCH_OBJECT, 45.0f, 1.0f);
+                    objDia = UChar.actOnLayer(ControlManager.controls.player, (int)UGen.eLayerMask.NPC, 45.0f, 3.0f);
+                    objInt = UChar.actOnLayer(ControlManager.controls.player, (int)UGen.eLayerMask.TOUCH_OBJECT, 45.0f, 1.0f);
 
                     // compare to see which is the likely target
                     if (objDia != null)
@@ -425,7 +446,7 @@ namespace Ninjacat.Characters.Control
                     obj = obj_Interact;
 
 				if (obj != null) {
-						obj.SendMessage("handleInteraction", this.gameObject);
+						obj.SendMessage("handleInteraction", ControlManager.controls.player);
 				}
 			}
 		}

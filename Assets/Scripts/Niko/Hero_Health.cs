@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.Camera;
+using Ninjacat.Characters.Control;
 
 public class Hero_Health : MonoBehaviour {
 
@@ -22,6 +23,9 @@ public class Hero_Health : MonoBehaviour {
 
     private void Start()
     {
+        // Send player references to ControlManager
+        ControlManager.controls.SendMessage("setPlayer", this.gameObject);
+
         HUD.hud.HealthSlider.gameObject.SetActive(true);
         currentHealth = startingHealth;
 		HUD.hud.HealthSlider.maxValue = startingHealth;
