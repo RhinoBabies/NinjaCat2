@@ -23,7 +23,7 @@ namespace Ninjacat.Characters.Control {
         
 
 
-        private void Awake() {
+        private void Start() {
             // Initialize values
             movement = new UMenu.MenuMovement();
             mainMenu = new List<UMenu.MenuOption>();

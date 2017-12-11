@@ -331,10 +331,12 @@ namespace Ninjacat.Characters.Control
                 m_Animator.applyRootMotion = false;
                 m_GroundCheckDistance = 0.1f;
             }
+            /*
             else if (dodge)
             {
                 m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x * m_DodgeMult, 0f, m_Rigidbody.velocity.z * m_DodgeMult);
             }
+            */
 		}
 
 		void ApplyExtraTurnRotation()

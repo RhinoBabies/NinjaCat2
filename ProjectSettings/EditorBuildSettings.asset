@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/control_test.unity
-    guid: 67f7f6baa4c4c8e45aa47eb14ed81547
+    path: Assets/_Scenes/finalLevel.unity
+    guid: aef70a5667239e84b8b6a9695159654f
+  - enabled: 1
+    path: Assets/_Scenes/throne_room.unity
+    guid: 9bb6be9107f7acc439dbd358eaa88d66
