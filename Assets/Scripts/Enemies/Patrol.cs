@@ -31,6 +31,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float suspicion;
         public float aggression;
         private float suspicionReset;
+        public float patrolSpeed;
 
         private void Start()
         {
@@ -41,7 +42,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             agent.updateRotation = false;
             agent.updatePosition = true;
             agent.acceleration = 0;
-            agent.speed = 0.5f;
+            agent.speed = patrolSpeed;
             aimPoint = 1;
             suspicionReset = suspicion;
 
@@ -108,7 +109,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                         if (suspicion <= 0.0f)
                         {
                             agent.acceleration = 0;
-                            agent.speed = 0.5f;
+                            agent.speed = patrolSpeed;
                         }
 
                         agent.SetDestination(destinationPoint.position);
