@@ -32,6 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float aggression;
         private float suspicionReset;
         public float patrolSpeed;
+        
 
         private void Start()
         {
