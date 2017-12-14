@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 200
-  Ragdoll: {fileID: 1718954514272006, guid: ad37614c07c5776458bc25fc99a60daf, type: 2}
+  Ragdoll: {fileID: 1733436238073432, guid: 6bca215bc0c922a4a8af71784d838df8, type: 2}
 --- !u!195 &22989098
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -346,32 +346,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 22989093}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4.82
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 13.47
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &22989099
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 22989093}
-  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.08
-  m_Height: 17.74
-  m_Direction: 1
-  m_Center: {x: 0, y: 7.34, z: 0}
 --- !u!54 &22989100
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1223,7 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 200
-  Ragdoll: {fileID: 1718954514272006, guid: ad37614c07c5776458bc25fc99a60daf, type: 2}
+  Ragdoll: {fileID: 1733436238073432, guid: 6bca215bc0c922a4a8af71784d838df8, type: 2}
 --- !u!195 &138068840
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1232,32 +1219,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 138068835}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4.82
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 13.47
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &138068841
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 138068835}
-  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.08
-  m_Height: 17.74
-  m_Direction: 1
-  m_Center: {x: 0, y: 7.34, z: 0}
 --- !u!54 &138068842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1436,6 +1410,16 @@ Prefab:
     - target: {fileID: 1052445001192124, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
       propertyPath: m_Name
       value: Mouse - Patroller 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
@@ -3439,6 +3423,16 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16520da761016c24ab37b7aaa3535193, type: 2}
   m_IsPrefabParent: 0
@@ -5172,6 +5166,16 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16520da761016c24ab37b7aaa3535193, type: 2}
   m_IsPrefabParent: 0
@@ -6219,6 +6223,16 @@ Prefab:
       propertyPath: numberOfPoints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
   m_IsPrefabParent: 0
@@ -7239,6 +7253,16 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16520da761016c24ab37b7aaa3535193, type: 2}
   m_IsPrefabParent: 0
@@ -7436,6 +7460,16 @@ Prefab:
         type: 2}
       propertyPath: numberOfPoints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
@@ -9070,6 +9104,16 @@ Prefab:
       propertyPath: m_Name
       value: Mouse - Patroller 4
       objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
   m_IsPrefabParent: 0
@@ -9291,6 +9335,16 @@ Prefab:
     - target: {fileID: 1052445001192124, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
       propertyPath: m_Name
       value: Mouse - Patroller 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
@@ -10946,6 +11000,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
+    - target: {fileID: 137022847773882066, guid: 16520da761016c24ab37b7aaa3535193,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d72a20d2ce767248b85283ff5d8608b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16520da761016c24ab37b7aaa3535193, type: 2}
   m_IsPrefabParent: 0
@@ -11529,6 +11593,16 @@ Prefab:
       propertyPath: m_Name
       value: Mouse - Patroller 7
       objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
   m_IsPrefabParent: 0
@@ -11682,6 +11756,16 @@ Prefab:
     - target: {fileID: 1052445001192124, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
       propertyPath: m_Name
       value: Mouse - Patroller 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Radius
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 195529225138324886, guid: d0328d2b9a0d5964db35e211c66216dc,
+        type: 2}
+      propertyPath: m_Height
+      value: 13.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0328d2b9a0d5964db35e211c66216dc, type: 2}
@@ -12526,7 +12610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 200
-  Ragdoll: {fileID: 1718954514272006, guid: ad37614c07c5776458bc25fc99a60daf, type: 2}
+  Ragdoll: {fileID: 1733436238073432, guid: 6bca215bc0c922a4a8af71784d838df8, type: 2}
 --- !u!195 &1385460147
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12535,32 +12619,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 1385460142}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4.82
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 13.47
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &1385460148
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1385460142}
-  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.08
-  m_Height: 17.74
-  m_Direction: 1
-  m_Center: {x: 0, y: 7.34, z: 0}
 --- !u!54 &1385460149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19125,7 +19196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 200
-  Ragdoll: {fileID: 1718954514272006, guid: ad37614c07c5776458bc25fc99a60daf, type: 2}
+  Ragdoll: {fileID: 1733436238073432, guid: 6bca215bc0c922a4a8af71784d838df8, type: 2}
 --- !u!195 &2116997108
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19134,32 +19205,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 2116997103}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4.82
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 13.47
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &2116997109
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2116997103}
-  m_Material: {fileID: 13400000, guid: e52fb17f9b1e7fd48b8955f1391d3688, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.08
-  m_Height: 17.74
-  m_Direction: 1
-  m_Center: {x: 0, y: 7.34, z: 0}
 --- !u!54 &2116997110
 Rigidbody:
   m_ObjectHideFlags: 0
