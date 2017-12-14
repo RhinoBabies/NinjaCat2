@@ -165,7 +165,7 @@ namespace Ninjacat.Characters.Control
 		{
             // Left Joystick and WASD Keys
             buttons.hori = Input.GetAxis("Horizontal");
-            if (buttons.hori < .5f)
+            if (buttons.hori < .5f && buttons.hori > -.5f)
             {
                 if (Input.GetButton("LeftKey"))
                     buttons.hori = -1.0f;
@@ -176,7 +176,7 @@ namespace Ninjacat.Characters.Control
             }
 
             buttons.vert = Input.GetAxis("Vertical");
-            if (buttons.vert < .5f)
+            if (buttons.vert < .5f && buttons.vert > -.5f)
             {
                 if (Input.GetButton("DownKey"))
                     buttons.vert = -1.0f;

@@ -23,7 +23,7 @@ public class sliceObject : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        currentStateInfo = anim.GetCurrentAnimatorStateInfo(3);
+        currentStateInfo = anim.GetCurrentAnimatorStateInfo(3); //refers to "Attacking" layer to check for state
 
         if (currentStateInfo.IsName("Strike1") || currentStateInfo.IsName("Strike2") || currentStateInfo.IsName("Strike3"))
         {
