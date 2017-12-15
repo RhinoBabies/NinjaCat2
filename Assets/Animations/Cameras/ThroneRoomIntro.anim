@@ -111,12 +111,12 @@ AnimationClip:
       - serializedVersion: 2
         time: 12
         value: {x: 0.049, y: 1.328, z: -5.803}
-        inSlope: {x: -0.008888904, y: 0, z: -0.48222187}
-        outSlope: {x: -0.008888904, y: 0, z: -0.48222187}
+        inSlope: {x: -0.008888904, y: -0.0666667, z: -0.4899997}
+        outSlope: {x: -0.008888904, y: -0.0666667, z: -0.4899997}
         tangentMode: 0
       - serializedVersion: 2
         time: 14
-        value: {x: 0.041, y: 1.369, z: -6.237}
+        value: {x: 0.041, y: 1.268, z: -6.244}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -270,12 +270,12 @@ AnimationClip:
       - serializedVersion: 2
         time: 12
         value: 1.328
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.0666667
+        outSlope: -0.0666667
         tangentMode: 136
       - serializedVersion: 2
         time: 14
-        value: 1.369
+        value: 1.268
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -328,12 +328,12 @@ AnimationClip:
       - serializedVersion: 2
         time: 12
         value: -5.803
-        inSlope: -0.48222187
-        outSlope: -0.48222187
+        inSlope: -0.4899997
+        outSlope: -0.4899997
         tangentMode: 136
       - serializedVersion: 2
         time: 14
-        value: -6.237
+        value: -6.244
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -554,7 +554,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 14
-    functionName: DestroyCamera
+    functionName: turnCamOnOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
