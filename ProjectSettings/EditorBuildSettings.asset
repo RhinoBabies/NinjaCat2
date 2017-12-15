@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/intro_betrayal.unity
+    guid: 76d2580218745b8498e76cb3c3f96faa
+  - enabled: 1
+    path: Assets/_Scenes/backstory.unity
+    guid: 8f12be413e6f74041b0094f3eb0fe87b
+  - enabled: 1
+    path: Assets/_Scenes/Kazan_Daytime.unity
+    guid: e5d3824aec5f3664588767b9c132423d
+  - enabled: 1
     path: Assets/_Scenes/finalLevel.unity
     guid: aef70a5667239e84b8b6a9695159654f
   - enabled: 1
     path: Assets/_Scenes/throne_room.unity
     guid: 9bb6be9107f7acc439dbd358eaa88d66
   - enabled: 1
-    path: Assets/_Scenes/intro_betrayal.unity
-    guid: 76d2580218745b8498e76cb3c3f96faa
-  - enabled: 1
-    path: Assets/_Scenes/Kazan_Daytime.unity
-    guid: e5d3824aec5f3664588767b9c132423d
+    path: Assets/_Scenes/credits.unity
+    guid: 5d6062bf6229db74fac1645f433ea074

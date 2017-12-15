@@ -10,7 +10,7 @@ public class changeSceneDoor : IInteract {
 
     protected override void handleInteraction(GameObject obj)
     {
-        loader.SendMessage("loadNextScene", "throne_room");
+        levelLoader.lvlLoader.SendMessage("loadNextScene", "throne_room");
     }
 
     protected override void confirmInteraction(GameObject obj)

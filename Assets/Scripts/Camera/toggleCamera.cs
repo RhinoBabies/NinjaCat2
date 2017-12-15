@@ -16,8 +16,11 @@ public class toggleCamera : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetButtonDown("Pause")) //allows player to exit from cutscene
+        if (Input.GetButtonDown("Pause"))
+        { //allows player to exit from cutscene
             turnCamOnOff();
+            Destroy(gameObject);
+        }
     }
 
     private void turnCamOnOff()

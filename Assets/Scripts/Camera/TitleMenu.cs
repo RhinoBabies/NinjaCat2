@@ -189,7 +189,7 @@ namespace Ninjacat.Menus
         /// </summary>
         private void newGameAction()
         {
-            SceneManager.LoadScene("Kazan_Daytime");
+            SceneManager.LoadScene(1);
         }
 
         /// <summary>

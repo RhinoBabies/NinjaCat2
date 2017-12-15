@@ -14,6 +14,7 @@ namespace Ninjacat.Data
         // Camera Orientation
         public int orientX;
         public int orientY;
+        public int heroCurrHealth;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace Ninjacat.Data
             // Set default options
             orientX = 1;
             orientY = 1;
+            heroCurrHealth = 1000;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.Camera;
+using Ninjacat.Data;
 
 public class Hero_Health : MonoBehaviour {
 
@@ -20,10 +21,23 @@ public class Hero_Health : MonoBehaviour {
     private bool blocking;
     private bool damaged;
 
+    private void Awake()
+    {
+        if (GameData.data == null) //starting a scene from the editor
+            currentHealth = startingHealth;
+
+        else if (GameData.data.heroCurrHealth <= 0) { //reloading a scene after death
+            currentHealth = startingHealth;
+            GameData.data.heroCurrHealth = currentHealth;
+        }
+
+        //if persisting HP, health will be updated in Start()
+    }
+
     private void Start()
     {
         HUD.hud.HealthSlider.gameObject.SetActive(true);
-        currentHealth = startingHealth;
+        currentHealth = GameData.data.heroCurrHealth;
 		HUD.hud.HealthSlider.maxValue = startingHealth;
 		HUD.hud.HealthSlider.value = currentHealth;
         loader = FindObjectOfType<levelLoader>();
@@ -39,6 +53,7 @@ public class Hero_Health : MonoBehaviour {
         {
             blocking = false;
         }
+
         if(damaged)
         {
             HUD.hud.DamageImage.color = flashColor;
@@ -47,7 +62,9 @@ public class Hero_Health : MonoBehaviour {
         {
             HUD.hud.DamageImage.color = Color.Lerp(HUD.hud.DamageImage.color, Color.clear, flashSpeed*Time.deltaTime);
         }
+
         damaged = false;
+        Debug.Log("Current HP: " + currentHealth + " Data HP: " + GameData.data.heroCurrHealth);
     }
 
     public void TakeDamage(int amount)
@@ -56,11 +73,15 @@ public class Hero_Health : MonoBehaviour {
         if (blocking == true)
         {
             currentHealth -= amount/blockStrength;
+            GameData.data.heroCurrHealth = currentHealth;
+
             HUD.hud.HealthSlider.value = currentHealth;
         }
         else
         {
             currentHealth -= amount;
+            GameData.data.heroCurrHealth = currentHealth;
+
             HUD.hud.HealthSlider.value = currentHealth;
         }
         if (currentHealth < 1)
