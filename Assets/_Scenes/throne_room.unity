@@ -335,7 +335,7 @@ MonoBehaviour:
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 262111346}
+  leader: {fileID: 2040327566}
 --- !u!114 &262111350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +767,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114771992586602166, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: startingHealth
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771992586602166, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: currentHealth
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: awareness
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: activation
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: temper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: aggression
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca4cbb8e02e63b44db147b215c5ef80d, type: 2}
   m_IsPrefabParent: 0
@@ -1094,6 +1124,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16520da761016c24ab37b7aaa3535193, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &580652203 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1925309451622544, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1410096858}
 --- !u!1 &606852126 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1209820526480646, guid: 16520da761016c24ab37b7aaa3535193,
@@ -1144,12 +1179,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
-  activation: 2
+  awareness: 1
+  activation: 1
   aggression: 5
-  temper: 2
-  threshold: 250
-  leader: {fileID: 606852126}
+  temper: 1
+  threshold: 1000
+  leader: {fileID: 2138075765}
 --- !u!114 &606852130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,12 +1733,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
+  awareness: 2
   activation: 2
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 741291083}
+  leader: {fileID: 580652203}
 --- !u!114 &741291087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,6 +1929,36 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 286217625}
+    - target: {fileID: 114399620840055644, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: awareness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399620840055644, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: temper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434520465818062, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: startingHealth
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434520465818062, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: currentHealth
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399620840055644, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: leader
+      value: 
+      objectReference: {fileID: 580652203}
+    - target: {fileID: 114399620840055644, guid: 83b0ece57c0c31240a3ea8caea0ca9b3,
+        type: 2}
+      propertyPath: threshold
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83b0ece57c0c31240a3ea8caea0ca9b3, type: 2}
   m_IsPrefabParent: 0
@@ -2318,12 +2383,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
+  awareness: 2
   activation: 2
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 988623389}
+  leader: {fileID: 580652203}
 --- !u!114 &988623393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,12 +2489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
-  activation: 2
+  awareness: 1
+  activation: 1
   aggression: 5
-  temper: 2
-  threshold: 250
-  leader: {fileID: 1014382530}
+  temper: 1
+  threshold: 500
+  leader: {fileID: 2138075765}
 --- !u!114 &1014382534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2614,7 +2679,7 @@ MonoBehaviour:
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 1077206889}
+  leader: {fileID: 2040327566}
 --- !u!114 &1077206893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3338,6 +3403,41 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114771992586602166, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: startingHealth
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771992586602166, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: currentHealth
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: awareness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: activation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: temper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: aggression
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114216550466173940, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+        type: 2}
+      propertyPath: leader
+      value: 
+      objectReference: {fileID: 2138075765}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca4cbb8e02e63b44db147b215c5ef80d, type: 2}
   m_IsPrefabParent: 0
@@ -3393,12 +3493,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
+  awareness: 2
   activation: 2
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 1412144790}
+  leader: {fileID: 580652203}
 --- !u!114 &1412144794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3827,12 +3927,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
-  activation: 2
+  awareness: 1
+  activation: 1
   aggression: 5
-  temper: 2
-  threshold: 250
-  leader: {fileID: 1507180025}
+  temper: 1
+  threshold: 1000
+  leader: {fileID: 2138075765}
 --- !u!114 &1507180029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4263,12 +4363,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
-  activation: 2
+  awareness: 1
+  activation: 1
   aggression: 5
-  temper: 2
-  threshold: 250
-  leader: {fileID: 1629919772}
+  temper: 1
+  threshold: 500
+  leader: {fileID: 2138075765}
 --- !u!114 &1629919776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6034,7 +6134,7 @@ MonoBehaviour:
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 1879033091}
+  leader: {fileID: 2040327566}
 --- !u!114 &1879033095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6661,9 +6761,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
   awareness: 5
-  activation: 2
+  activation: 5
   aggression: 5
-  temper: 2
+  temper: 1
   threshold: 250
   leader: {fileID: 2040327566}
 --- !u!114 &2040327570
@@ -6766,12 +6866,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 286217625}
-  awareness: 5
+  awareness: 2
   activation: 2
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 2051700045}
+  leader: {fileID: 580652203}
 --- !u!114 &2051700049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,7 +7019,7 @@ MonoBehaviour:
   aggression: 5
   temper: 2
   threshold: 250
-  leader: {fileID: 2090453475}
+  leader: {fileID: 2040327566}
 --- !u!114 &2090453479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6970,3 +7070,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &2138075765 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1925309451622544, guid: ca4cbb8e02e63b44db147b215c5ef80d,
+    type: 2}
+  m_PrefabInternal: {fileID: 484720279}
