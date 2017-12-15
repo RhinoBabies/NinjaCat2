@@ -49,4 +49,11 @@ public class levelLoader : MonoBehaviour {
         Debug.Log("Loading previous scene...");
         SceneManager.LoadScene(lastScene);
     }
+
+    /*
+    private void Update()
+    {
+        Debug.Log(Graphics.activeTier);
+    }
+    */
 }

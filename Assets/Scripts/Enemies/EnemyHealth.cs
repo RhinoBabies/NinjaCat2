@@ -29,7 +29,10 @@ public class EnemyHealth : MonoBehaviour {
         if (currentHealth <= 0)
         {
             if(Ragdoll != null)
-                Instantiate(Ragdoll, updatePosition + new Vector3 (0f, .7f), transform.rotation);
+                if(gameObject.name == "Tomo")
+                    Instantiate(Ragdoll, updatePosition, transform.rotation); //Tomo doesn't need the raised ragdoll spawn
+                else
+                    Instantiate(Ragdoll, updatePosition + new Vector3 (0f, .7f), transform.rotation); //ragdolls spawning inside the floor bug fix
             else
                 Debug.LogWarning(name + " does not have a ragdoll set! Is this desired?");
 

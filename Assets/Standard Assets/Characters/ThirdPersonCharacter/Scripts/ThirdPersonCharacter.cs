@@ -86,8 +86,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				HandleAirborneMovement(move);
 			}
 
-			ScaleCapsuleForCrouching(crouch);
-			PreventStandingInLowHeadroom();
+			//ScaleCapsuleForCrouching(crouch);
+			//PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
@@ -96,6 +96,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void ScaleCapsuleForCrouching(bool crouch)
 		{
+            RaycastHit hitInfo;
+
 			if (m_IsGrounded && crouch)
 			{
 				if (m_Crouching) return;
@@ -106,13 +108,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			else
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                Debug.DrawRay(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up, Color.red, 5f);
+                float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+				/*
+                 * if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 				{
 					m_Crouching = true;
 					return;
 				}
-				m_Capsule.height = m_CapsuleHeight;
+                */
+                if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, out hitInfo, crouchRayLength))
+                {
+                    Debug.Log(hitInfo.collider.name);
+                    m_Crouching = true;
+                    return;
+                }
+                m_Capsule.height = m_CapsuleHeight;
 				m_Capsule.center = m_CapsuleCenter;
 				m_Crouching = false;
 			}
@@ -124,6 +135,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!m_Crouching)
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+                //Debug.DrawRay(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up, Color.blue, 5f);
 				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
 				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 				{

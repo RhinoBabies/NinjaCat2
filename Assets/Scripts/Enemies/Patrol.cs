@@ -103,6 +103,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     }
                     else //if(Vector3.Distance(target.position, this.transform.position) > awareness)
                     {
+                        /*
+                         * if(gameObject.name == "Mouse - Patroller")
+                         *  Debug.Log(gameObject.name + " moving to " + destinationPoint.position + " with aimPoint = " + aimPoint);
+                        */
 
                         suspicion -= Time.deltaTime;
 
