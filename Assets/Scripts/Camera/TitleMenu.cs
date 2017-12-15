@@ -238,9 +238,9 @@ namespace Ninjacat.Menus
         /// </summary>
         private void buildMainMenu()
         {
-            mainMenu.Add(buildMainMenuOption("Menu/Resume", newGameAction));
+            mainMenu.Add(buildMainMenuOption("Menu/NewGame", newGameAction));
             mainMenu.Add(buildMainMenuOption("Menu/Options", optionsAction));
-            mainMenu.Add(buildMainMenuOption("Menu/TitleScreen", exitGameAction));
+            mainMenu.Add(buildMainMenuOption("Menu/QuitGame", exitGameAction));
         }
 
         /// <summary>
