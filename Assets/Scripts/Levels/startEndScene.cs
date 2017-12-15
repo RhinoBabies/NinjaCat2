@@ -30,7 +30,6 @@ public class startEndScene : MonoBehaviour {
     void Update () {
         while (totalEnemies > 0)
         {
-            totalEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
             Debug.Log("Enemy Count: " + totalEnemies);
         }
 

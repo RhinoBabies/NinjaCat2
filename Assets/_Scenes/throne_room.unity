@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 39d474f3c55b3bc45b3848683f9254e7,
+  m_LightingDataAsset: {fileID: 112000002, guid: 77cd06045745b4c4abf99a7111610376,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3212,6 +3212,11 @@ Prefab:
         type: 2}
       propertyPath: m_AABB.m_Extent.z
       value: 0.24501762
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698314670369910, guid: fece7e640e8e08b4098cab742f6b43eb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fece7e640e8e08b4098cab742f6b43eb, type: 2}
@@ -6597,6 +6602,11 @@ Prefab:
       propertyPath: fadeToBlack
       value: 
       objectReference: {fileID: 1591584166}
+    - target: {fileID: 114208657077625460, guid: 6d09b40756e86bd4a9335fd19c842d7f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d09b40756e86bd4a9335fd19c842d7f, type: 2}
   m_IsPrefabParent: 0
