@@ -125,10 +125,6 @@ namespace Ninjacat.Characters.Control
         private PauseMenu pauseMenu;                    // Pause Menu object
         private QuickMenu quickMenu;                    // Quick Menu object
 
-        // CAMERA SETTINGS
-        public int orientX; // 1 is regular, -1 is inverted x-axis
-        public int orientY; // 1 is regular, -1 is inverted y-axis
-
 
 
         // ====================================================================
@@ -152,10 +148,6 @@ namespace Ninjacat.Characters.Control
 
             // initialize controlScheme to default
             controlScheme = normalMovement;
-
-            // initialize camera control to non-inverted
-            orientX = 1;
-            orientY = 1;
 		}
 
 
@@ -254,29 +246,15 @@ namespace Ninjacat.Characters.Control
             // Menus
 
             // If paused, run pause controls
-            if (UGen.isPaused()) {
+            if (UGen.isPaused())
+            {
                 pauseMenu.controlInterface(buttons);
                 buttons.setPresses(false);
             }
-            else { // If not paused
-                // If in quick menu, run quick menu controls
-                if (quickMenu.isOpen()) {
-                    quickMenu.controlInterface(buttons);
-                    buttons.setPresses(false);
-                }
-                else if (buttons.qMenu) { // If not in quick menu, check the quick menu button
-                    quickMenu.initMenu();
-                    buttons.setPresses(false);
-                }
-
-                // If pause button has been pressed, pause the game
-                if (buttons.pause) {
-                    buttons.setPresses(false);
-                    pauseMenu.initMenu();
-                }
-
-                // Not in any menus, control camera (if controlling camera in UPDATE)
-                //cam.controlInterface(buttons);
+            else if (buttons.pause)
+            {
+                buttons.setPresses(false);
+                pauseMenu.initMenu();
             }
 		}
 
@@ -284,12 +262,6 @@ namespace Ninjacat.Characters.Control
 
 		// Run regular controls if not paused
 		private void FixedUpdate() {
-            // If not in quick menu, run regular controls
-            if (quickMenu.isOpen()) {
-                buttons.setPersistent(false);
-                buttons.setPresses(false);
-            }
-
             cam.controlInterface(buttons); // controlling camera from fixed update is smoother
             controlScheme.controlInterface(buttons);
             buttons.setPresses(false);
